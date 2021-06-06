@@ -67,7 +67,16 @@
 
 \begin{document}
 
+  \newcommand\covercontents{sampul/konten-id.tex}
+
   \input{sampul/sampul-luar.tex}
+
+  \setcounter{page}{1}
+
+  \input{sampul/sampul-dalam.tex}
+  \cleardoublepage
+
+  \renewcommand\covercontents{sampul/konten-en.tex}
 
   \input{sampul/sampul-dalam.tex}
   \cleardoublepage
