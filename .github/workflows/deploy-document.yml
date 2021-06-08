@@ -1,7 +1,5 @@
 name: Deploy Document
 on:
-  pull_request:
-    branches: [ main ]
   push:
     branches: [ main ]
 jobs:
@@ -16,8 +14,6 @@ jobs:
           root_file: main.tex
       - name: Move build results
         run: mkdir build && mv *.pdf build
-      - name: Disable Ignore
-        run: rm .gitignore
       - name: Deploy build results
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
