@@ -1,5 +1,7 @@
 name: Deploy Document
 on:
+  pull_request:
+    branches: [ main ]
   push:
     branches: [ main ]
 jobs:
@@ -12,8 +14,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-      - name: Disable Ignore
-        run: rm .gitignore
+      - name: Remove everything except the build result
+        run: find . ! -name 'main.pdf' -type f -exec rm -f {} +
         shell: bash
       - name: Deploy result
         uses: JamesIves/github-pages-deploy-action@4.1.3
