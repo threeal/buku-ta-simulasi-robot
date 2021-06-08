@@ -17,7 +17,10 @@ jobs:
       - name: Remove everything except the build result
         run: find . ! -name 'main.pdf' -type f -exec rm -f {} +
         shell: bash
-      - name: Deploy result
+      - name: Initialize a new Git repository
+        run: git init
+        shell: bash
+      - name: Deploy this repository
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages
