@@ -17,7 +17,7 @@ Seperti yang terlihat pada potongan kode \ref{lst:headlink},
   language=XML,
   caption={\emph{Link element} untuk bagian kepala robot.},
   label={lst:headlink}
-]{program/head_link.xml}
+]{kode/robot_model_sdf/head_link.xml}
 
 Agar terhubung satu sama lain,
   sebuah \emph{joint element} perlu ditambahkan untuk menentukan hubungan antara dua \emph{element}.
@@ -30,13 +30,13 @@ Seperti yang terlihat pada potongan kode \ref{lst:leftshoulderjoint} dan \ref{ls
   language=XML,
   caption={\emph{Joint element} yang menghubungkan bagian pundak kiri dan bagian badan atas robot.},
   label={lst:leftshoulderjoint}
-]{program/left_shoulder_joint.xml}
+]{kode/robot_model_sdf/left_shoulder_joint.xml}
 
 \lstinputlisting[
   language=XML,
   caption={\emph{Joint element} yang menghubungkan bagian badan atas dan bagian badan bawah robot.},
   label={lst:upperbodyjoint}
-]{program/upper_body_joint.xml}
+]{kode/robot_model_sdf/upper_body_joint.xml}
 
 Terakhir, penyusunan SDFormat dilakukan dengan menambahkan sensor kamera dan \emph{depth camera} yang digunakan pada robot.
 Sensor tersebut ditambahkan dengan menyematkan \emph{sensor element} pada \emph{link element} dari masing-masing bagian kamera dan \emph{depth camera}.
@@ -51,10 +51,10 @@ Seperti yang terlihat pada potongan kode \ref{lst:camerasensor} dan \ref{lst:dep
   language=XML,
   caption={\emph{Sensor element} dari sensor kamera.},
   label={lst:camerasensor}
-]{program/camera_sensor.xml}
+]{kode/robot_model_sdf/camera_sensor.xml}
 
 \lstinputlisting[
   language=XML,
   caption={\emph{Sensor element} dari sensor \emph{depth camera}.},
   label={lst:depthcamerasensor}
-]{program/depth_camera_sensor.xml}
+]{kode/robot_model_sdf/depth_camera_sensor.xml}
