@@ -14,6 +14,7 @@
 \usepackage{eso-pic}
 \usepackage{etoolbox}
 \usepackage{graphicx}
+\usepackage{import}
 \usepackage{lipsum}
 \usepackage{lmodern}
 \usepackage{longtable}
@@ -68,38 +69,38 @@
 
 \begin{document}
 
-  \newcommand\covercontents{sampul/konten-id.tex}
+  \newcommand\covercontents{konten-id.tex}
 
-  \input{sampul/sampul-luar.tex}
+  \subimport{sampul}{sampul-luar.tex}
 
   \setcounter{page}{1}
 
-  \input{sampul/sampul-dalam.tex}
+  \subimport{sampul}{sampul-dalam.tex}
   \cleardoublepage
 
-  \renewcommand\covercontents{sampul/konten-en.tex}
+  \renewcommand\covercontents{konten-en.tex}
 
-  \input{sampul/sampul-dalam.tex}
+  \subimport{sampul}{sampul-dalam.tex}
   \cleardoublepage
 
   \setlength{\parindent}{2em}
   \setlength{\parskip}{1ex}
 
-  \input{lainnya/pernyataan-keaslian.tex}
+  \subimport{lainnya}{pernyataan-keaslian.tex}
   \cleardoublepage
 
-  \input{lainnya/lembar-pengesahan.tex}
+  \subimport{lainnya}{lembar-pengesahan.tex}
   \cleardoublepage
 
   \pagenumbering{roman}
 
-  \input{abstrak/abstrak-id.tex}
+  \subimport{abstrak}{abstrak-id.tex}
   \cleardoublepage
 
-  \input{abstrak/abstrak-en.tex}
+  \subimport{abstrak}{abstrak-en.tex}
   \cleardoublepage
 
-  \input{lainnya/kata-pengantar.tex}
+  \subimport{lainnya}{kata-pengantar.tex}
   \cleardoublepage
 
   \renewcommand*\contentsname{DAFTAR ISI}
@@ -119,19 +120,19 @@
 
   \pagenumbering{arabic}
 
-  \input{bab/1-pendahuluan.tex}
+  \subimport{bab}{1-pendahuluan.tex}
   \cleardoublepage
 
-  \input{bab/2-tinjauan-pustaka.tex}
+  \subimport{bab}{2-tinjauan-pustaka.tex}
   \cleardoublepage
 
-  \input{bab/3-desain-implementasi.tex}
+  \subimport{bab}{3-desain-implementasi.tex}
   \cleardoublepage
 
-  \input{bab/4-pengujian-analisis.tex}
+  \subimport{bab}{4-pengujian-analisis.tex}
   \cleardoublepage
 
-  \input{bab/5-penutup.tex}
+  \subimport{bab}{5-penutup.tex}
   \cleardoublepage
 
   \renewcommand\bibname{DAFTAR PUSTAKA}
