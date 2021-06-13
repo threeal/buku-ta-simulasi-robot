@@ -17,11 +17,16 @@ Seperti yang terlihat pada gambar \ref{fig:rosgraphnavigationplugin},
 
 \input{tabel/gerakan-linier-simulasi.tex}
 
-Pengujian ini dilakukan dengan berbagai macam konfigurasi kecepatan X dan Y dari gerakan yang diinginkan untuk mengukur estimasi posisi dari perhitungan odometri.
+Pengujian ini dilakukan dengan berbagai macam konfigurasi kecepatan X dan Y yang diperintahkan selama 10 detik.
 Hasil pengujian ini bisa dilihat pada tabel \ref{tb:gerakanliniersimulasi}.
-Pada tabel tersebut dapat diketahui bahwa gerakan yang diperintahkan kepada robot cenderung menghasilkan posisi robot yang sesuai dengan posisi perkiraan (\emph{estimated position}).
+Pada tabel tersebut, nilai yang ada di kolom \emph{speed} adalah besar kecepatan yang diatur pada \emph{topic} \lstinline{/cmd_vel},
+  nilai yang ada di kolom \emph{estimated position} didapatkan dari perkalian besar kecepatan dengan durasi pengujian,
+  nilai yang ada di kolom \emph{measured position} didapatkan dari koordinat model yang ada di simulasi,
+  dan terakhir nilai yang ada di kolom \emph{odometry position} didapatkan dari data yang ada pada \emph{topic} \lstinline{/odom}.
+
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa gerakan yang diperintahkan kepada robot cenderung menghasilkan posisi robot yang sesuai dengan posisi perkiraan (\emph{estimated position}).
 Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
   seperti yang terlihat pada gambar \ref{fig:grafikgerakanliniersimulasi},
-  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai walaupun dengan \emph{error} jarak yang relatif tidak kecil (kurang lebih 1-2 meter).
+  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai dengan yang diharapkan (\emph{expected}) walaupun dengan \emph{error} jarak yang relatif tidak kecil (kurang lebih 1-2 meter).
 
 \input{grafik/gerakan-linier-simulasi.tex}

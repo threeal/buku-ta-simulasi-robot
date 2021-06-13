@@ -1,7 +1,7 @@
 \begin{sidewaystable}
   \centering
-  \caption{Hasil estimasi posisi dari gerakan linier di simulasi selama 10 detik.}
-  \label{tb:gerakanliniersimulasi}
+  \caption{Hasil estimasi posisi dari gerakan linier pada \emph{real robot} selama 3 detik.}
+  \label{tb:gerakanlinierrobot}
   \begin{tabular}{|c|c|c|c|c|c|c|c|}
     \hline \rowcolor[HTML]{E0E0E0}
     \multicolumn{2}{|c|}{\textbf{Speed}} &
@@ -9,11 +9,11 @@
     \multicolumn{2}{|c|}{\textbf{Measured Position}} &
     \multicolumn{2}{|c|}{\textbf{Odometry Position}}
     \\ \hline \rowcolor[HTML]{E0E0E0}
-    \textbf{x (m/min)} & \textbf{y (m/min)} &
+    \textbf{x (m/s)} & \textbf{y (m/s)} &
     \textbf{x (m)} & \textbf{y (m)} &
     \textbf{x (m)} & \textbf{y (m)} &
     \textbf{x (m)} & \textbf{y (m)}
-    \csvreader[head to column names]{data/gerakan_linier_simulasi.csv}{}{
+    \csvreader[head to column names]{data/gerakan_linier_robot.csv}{}{
       \\ \hline
       \speedx & \speedy &
       \expectedx & \expectedy &

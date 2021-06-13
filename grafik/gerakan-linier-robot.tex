@@ -11,11 +11,11 @@
         bar width=3pt,
         ybar=0pt,
         xmin=-1,
-        xmax=13,
+        xmax=12,
       ]
-      \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_simulasi.csv};
-      \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_simulasi.csv};
-      \addplot table[x=index,y=odometryx,col sep=comma]{data/gerakan_linier_simulasi.csv};
+      \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=odometryx,col sep=comma]{data/gerakan_linier_robot.csv};
     \end{axis}
   \end{tikzpicture}
   \begin{tikzpicture}
@@ -33,14 +33,14 @@
         bar width=3pt,
         ybar=0pt,
         xmin=-1,
-        xmax=13,
+        xmax=12,
       ]
-      \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_simulasi.csv};
-      \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_simulasi.csv};
-      \addplot table[x=index,y=odometryy,col sep=comma]{data/gerakan_linier_simulasi.csv};
+      \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=odometryy,col sep=comma]{data/gerakan_linier_robot.csv};
       \legend{Expected,Measured,Odometry}
     \end{axis}
   \end{tikzpicture}
-  \caption{Grafik estimasi posisi dari gerakan linier di simulasi.}
-  \label{fig:grafikgerakanliniersimulasi}
+  \caption{Grafik estimasi posisi dari gerakan linier pada \emph{real robot}.}
+  \label{fig:grafikgerakanlinierrobot}
 \end{figure}
