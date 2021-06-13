@@ -4,14 +4,14 @@
   \begin{tikzpicture}
     \begin{axis}[
         height=0.45\textwidth,
-        width=0.8\textwidth,
+        width=0.9\textwidth,
         ylabel=X (meter),
         xticklabels={,,},
         ymajorgrids,
         bar width=3pt,
         ybar=0pt,
-        xmin=-1,
-        xmax=12,
+        xmin=0,
+        xmax=13,
       ]
       \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_robot.csv};
       \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_robot.csv};
@@ -21,7 +21,7 @@
   \begin{tikzpicture}
     \begin{axis}[
         height=0.45\textwidth,
-        width=0.8\textwidth,
+        width=0.9\textwidth,
         ylabel=Y (meter),
         xticklabels={,,},
         legend style={
@@ -32,8 +32,8 @@
         ymajorgrids,
         bar width=3pt,
         ybar=0pt,
-        xmin=-1,
-        xmax=12,
+        xmin=0,
+        xmax=13,
       ]
       \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_robot.csv};
       \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_robot.csv};
