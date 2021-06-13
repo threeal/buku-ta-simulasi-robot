@@ -1,8 +1,40 @@
 \chapter{PENGUJIAN DAN ANALISIS}
 \label{chap:pengujiananalisis}
 
-Pada penelitian ini, dipaparkan hasil pengujian serta analisis dari desain sistem dan implementasi.
-Data yang digunakan dalam pengujian data diambil dari \textcolor{red}{\lipsum[1][1-5]}
+Pada bab ini akan dipaparkan hasil pengujian serta analisis dari desain dan implementasi sistem yang telah dibuat sebelumnya di bab \ref{chap:desainimplementasi}.
+Setiap pengujian yang dilakukan pada penelitian ini diujikan menggunakan model robot yang ada di simulasi dan menggunakan prototipe robot yang diuji secara \emph{real}.
+
+Pengujian yang dilakukan menggunakan model robot yang ada di simulasi dilakukan di lingkungan \emph{outdoor} dan di lingkungan \emph{indoor} seperti yang telah dibuat di bagian \ref{sec:lingkungansimulasi}.
+Pengujian tersebut dilakukan di simulator Gazebo dengan menggunakan komputer dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputersimulator}.
+Sedangkan pengujian yang dilakukan menggunakan prototipe robot secara \emph{real} dilakukan di lingkungan laboratorium AJ403 Teknik Komputer ITS serta menggunakan komputer robot dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputerrobot}.
+
+\begin{longtable}{|c|c|}
+  \caption{Spesifikasi komputer untuk menjalankan simulator.}
+  \label{tb:spesifikasikomputersimulator}\\
+  \hline
+  OS  & Ubuntu 20.04.2 LTS \\
+  \hline
+  CPU & Intel i3-8100 (4) @ 3.600GH \\
+  \hline
+  GPU & NVIDIA GeForce GTX 1050 Ti \\
+  \hline
+  RAM & 7901 MiB \\
+  \hline
+\end{longtable}
+
+\begin{longtable}{|c|c|c|}
+  \caption{Spesifikasi komputer yang ada pada prototipe robot.}
+  \label{tb:spesifikasikomputerrobot}\\
+  \hline
+  OS  & Ubuntu 20.04.2 LTS \\
+  \hline
+  CPU & Intel i3-10110U (4) @ 4.100 \\
+  \hline
+  GPU & Intel UHD Graphics \\
+  \hline
+  RAM & 3648 MiB \\
+  \hline
+\end{longtable}
 
 \subimport{4-pengujian-analisis}{1-pengujian-gerakan.tex}
 \subimport{4-pengujian-analisis}{2-pengujian-citra-kamera.tex}
