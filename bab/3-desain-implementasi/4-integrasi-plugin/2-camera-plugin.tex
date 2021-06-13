@@ -1,7 +1,7 @@
 \subsection{\emph{Camera Plugin}}
 \label{subsec:cameraplugin}
 
-\emph{Camera Plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen kamera di simulasi.
+\emph{Camera plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen kamera di simulasi.
 \emph{Plugin} yang digunakan ini akan mengirimkan data citra melalui \emph{topic} \lstinline{/image_raw} dan mengirimkan informasi kamera seperti resolusi citra, FoV, matriks proyeksi, dan lain sebagainya melalui \emph{topic} \lstinline{/camera_info}.
 \emph{Plugin} ini didapatkan dari \emph{package} \lstinline{gazebo_ros},
   sehingga yang perlu dilakukan hanyalah mengintegrasikan \emph{plugin} tersebut ke model robot yang sudah dibuat di bagian \ref{sec:modelrobot}.

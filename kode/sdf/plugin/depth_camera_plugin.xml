@@ -1,0 +1,9 @@
+<link name="depth_camera_link">
+  ...
+  <sensor name="depth_camera" type="depth">
+    ...
+    <plugin name="depth_camera_plugin" filename="libgazebo_ros_camera.so">
+      <camera_name>depth_camera</camera_name>
+    </plugin>
+  </sensor>
+</link>
