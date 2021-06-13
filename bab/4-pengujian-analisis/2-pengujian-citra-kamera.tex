@@ -1,7 +1,12 @@
 \section{Pengujian Citra Kamera}
 \label{sec:pengujiancitrakamera}
 
-\textcolor{red}{\lipsum[1-2]}
+Pengujian citra kamera terbagi menjadi dua bagian,
+  yakni pengujian pengiriman citra kamera di perangkat yang sama dan pengujian pengiriman citra kamera antara perangkat yang berbeda.
+Pengujian pengiriman citra ini dilakukan untuk menguji data citra gambar yang diterima melalui \emph{topic} \lstinline{/raw_image} serta untuk menguji kemampuan ROS 2 dalam mengirim data citra dengan ukuran besar secara \emph{real-time}.
+Kedua pengujian ini melibatkan komponen kamera yang ada pada robot,
+  \emph{image viewer node} untuk melihat tampilan data citra yang diterima,
+  dan \emph{command line} \lstinline{$ ros2 topic} yang digunakan untuk mengukur estimasi \emph{delay} dan frekuensi dari data citra yang diterima.
 
 \subimport{2-pengujian-citra-kamera}{1-citra-simulasi.tex}
 \subimport{2-pengujian-citra-kamera}{2-citra-robot.tex}
