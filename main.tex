@@ -47,6 +47,7 @@
 \titlespacing{\subsubsection}{0ex}{0.5ex}{0ex}
 
 \usepackage{listings}
+\renewcommand{\lstlistingname}{Kode}
 \definecolor{comment}{RGB}{0,128,0}
 \definecolor{string}{RGB}{255,0,0}
 \definecolor{keyword}{RGB}{0,0,255}
@@ -67,10 +68,7 @@
 }
 \lstset{style=codestyle}
 
-\hyphenation{
-  ca-me-ra
-  si-mu-la-si
-}
+\subimport{pustaka}{tanda-hubung.tex}
 
 \begin{document}
 
@@ -118,6 +116,11 @@
   \listoffigures
   \cleardoublepage
 
+  \renewcommand*\lstlistlistingname{DAFTAR KODE}
+  \addcontentsline{toc}{chapter}{\lstlistlistingname}
+  \lstlistoflistings
+  \cleardoublepage
+
   \renewcommand*\listtablename{DAFTAR TABEL}
   \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
@@ -143,7 +146,7 @@
   \renewcommand\bibname{DAFTAR PUSTAKA}
   \addcontentsline{toc}{chapter}{\bibname}
   \bibliographystyle{unsrtnat}
-  \bibliography{pustaka/pustaka.bib}
+  \bibliography{pustaka/kutipan.bib}
   \cleardoublepage
 
 \end{document}

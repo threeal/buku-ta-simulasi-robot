@@ -1,4 +1,19 @@
-\subsection{Depth Camera Plugin}
+\subsection{\emph{Depth Camera Plugin}}
 \label{subsec:depthcameraplugin}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Depth camera plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen \emph{depth camera} di simulasi.
+Sama seperti yang digunakan pada \emph{camera plugin},
+  \emph{plugin} ini juga menggunakan \emph{plugin} \lstinline{gazebo_ros_camera} dari \emph{package} \lstinline{gazebo_ros}.
+Hanya saja \emph{plugin} ini mengirimkan dua macam data citra,
+  yakni citra berwarna dengan data citra yang dikirim melalui \emph{topic} \lstinline{/image_raw} dan informasi kamera yang dikirim melalui \emph{topic} \lstinline{/camera_info},
+  serta citra kedalaman (\emph{depth image}) dengan data citra yang dikirim melalui \emph{topic} \lstinline{/depth/image_raw} dan informasi kamera yang dikirim melalui \emph{topic} \lstinline{/depth/camera_info}.
+
+\lstinputlisting[
+  language=XML,
+  caption={Integrasi \emph{depth camera plugin} pada model robot.},
+  label={lst:integrasidepthcameraplugin}
+]{kode/sdf/plugin/depth_camera_plugin.xml}
+
+Seperti yang terlihat pada potongan kode \ref{lst:integrasidepthcameraplugin},
+  cara yang sama seperti yang ada pada \emph{camera plugin} di bagian \ref{subsec:cameraplugin} juga dilakukan pada \emph{plugin} ini.
+Perbedaannya terletak pada \emph{name attribute} yang digunakan dan nilai dari \emph{camera name} yang menentukan \emph{namespace} dari \emph{topic} yang digunakan.

@@ -1,0 +1,14 @@
+\subsection{Struktur SDFormat Pengguna}
+\label{subsec:sdformatpengguna}
+
+\lstinputlisting[
+  language=XML,
+  caption={Struktur SDFormat dari model pengguna.},
+  label={lst:usermodelsdf}
+]{kode/sdf/user_model.xml}
+
+Struktur SDFormat pada model pengguna dibuat dengan cara yang sama dengan yang dilakukan pada model robot.
+Seperti yang terlihat pada potongan kode \ref{lst:usermodelsdf},
+  model pengguna akan terdiri dari beberapa \emph{link element} yang berisi setiap bagian yang dapat bergerak bebas pada model pengguna seperti lengan atas, paha, leher, dan lain sebagainya.
+Kemudian, \emph{link element} tersebut akan terhubung satu sama lain menggunakan \emph{joint element}.
+Setiap \emph{link element} maupun \emph{joint element} yang ada nantinya juga memiliki \emph{child element} lain seperti \emph{collision element}, \emph{axis element}, dsb. Sesuai dengan yang dibutuhkan oleh \emph{link element} dan \emph{joint element}.

@@ -1,4 +1,20 @@
-\subsection{Camera Plugin}
+\subsection{\emph{Camera Plugin}}
 \label{subsec:cameraplugin}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Camera plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen kamera di simulasi.
+\emph{Plugin} yang digunakan ini akan mengirimkan data citra melalui \emph{topic} \lstinline{/image_raw} dan mengirimkan informasi kamera seperti resolusi citra, FoV, matriks proyeksi, dan lain sebagainya melalui \emph{topic} \lstinline{/camera_info}.
+\emph{Plugin} ini didapatkan dari \emph{package} \lstinline{gazebo_ros},
+  sehingga yang perlu dilakukan hanyalah mengintegrasikan \emph{plugin} tersebut ke model robot yang sudah dibuat di bagian \ref{sec:modelrobot}.
+
+\lstinputlisting[
+  language=XML,
+  caption={Integrasi \emph{camera plugin} pada model robot.},
+  label={lst:integrasicameraplugin}
+]{kode/sdf/plugin/camera_plugin.xml}
+
+Seperti yang terlihat pada potongan kode \ref{lst:integrasicameraplugin},
+  sebuah \emph{plugin element} ditambahkan sebagai \emph{child element} dari \emph{sensor element}.
+Sama seperti \emph{plugin} sebelumnya, \emph{plugin} ini juga menggunakan \emph{name attribute} untuk menentukan nama node dan \emph{filename attribute} untuk menentukan \emph{shared library} dari \emph{plugin} yang telah dikompilasi.
+Dalam hal ini \emph{plugin} yang digunakan adalah \emph{plugin} \lstinline{gazebo_ros_camera} dari \emph{package} \lstinline{gazebo_ros}.
+Sebagai tambahan, \emph{plugin} ini menggunakan \emph{camera name element} untuk menentukan \emph{namespace} dari \emph{topic} yang digunakan,
+  sehingga dengan \emph{camera name element} bernilai \emph{camera} maka \emph{topic} yang digunakan adalah \lstinline{/camera/image_raw} dan \lstinline{/camera/camera_info}.

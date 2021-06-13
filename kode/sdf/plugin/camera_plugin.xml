@@ -1,0 +1,9 @@
+<link name="camera_link">
+  ...
+  <sensor name="camera" type="camera">
+    ...
+    <plugin name="camera_plugin" filename="libgazebo_ros_camera.so">
+      <camera_name>camera</camera_name>
+    </plugin>
+  </sensor>
+</link>

@@ -1,0 +1,7 @@
+<joint name="left_shoulder_joint" type="revolute">
+  <parent>upper_body_link</parent>
+  <child>left_shoulder_link</child>
+  <axis>
+    <xyz>0 -1 0</xyz>
+  </axis>
+</joint>

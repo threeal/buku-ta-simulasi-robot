@@ -1,0 +1,4 @@
+<joint name="upper_body_joint" type="fixed">
+  <parent>lower_body_link</parent>
+  <child>upper_body_link</child>
+</joint>

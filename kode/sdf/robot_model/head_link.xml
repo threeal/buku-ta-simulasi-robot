@@ -1,0 +1,20 @@
+<link name="head_link">
+  <pose>-0.012258 0 1.46717 0 0 0</pose>
+  <inertial>
+    <mass>1.0</mass>
+  </inertial>
+  <collision name="head_collision">
+    <geometry>
+      <mesh>
+        <uri>model://dienen_robot/collisions/head_collision.dae</uri>
+      </mesh>
+    </geometry>
+  </collision>
+  <visual name="head_visual">
+    <geometry>
+      <mesh>
+        <uri>model://dienen_robot/meshes/head.dae</uri>
+      </mesh>
+    </geometry>
+  </visual>
+</link>
