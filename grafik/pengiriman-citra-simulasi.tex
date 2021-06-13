@@ -1,0 +1,31 @@
+
+\begin{figure} [ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.45\textwidth,
+        width=0.9\textwidth,
+        ylabel=Delay (ms),
+        ymajorgrids,
+        ymin=0,
+        ymax=40,
+      ]
+      \addplot table[x=size,y=delay,col sep=comma]{data/pengiriman_citra_simulasi.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.45\textwidth,
+        width=0.9\textwidth,
+        xlabel=Data Size (kb),
+        ylabel=Rate (hz),
+        ymajorgrids,
+        ymin=0,
+        ymax=40,
+      ]
+      \addplot table[x=size,y=rate,col sep=comma]{data/pengiriman_citra_simulasi.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Grafik \emph{delay} dan frekuensi dari pengiriman citra di simulasi.}
+  \label{fig:grafikpengirimancitrasimulasi}
+\end{figure}
