@@ -1,8 +1,27 @@
 \subsection{Pengujian Gerakan Linier dan Estimasi Posisi di Simulasi}
 \label{subsec:liniersimulasi}
 
+\begin{figure} [ht]
+  \centering
+  \includegraphics[scale=0.3]{gambar/rosgraph-navigation-plugin.png}
+  \caption{Relasi antar-\emph{node} dari pengujian gerakan linier dan estimasi posisi di simulasi.}
+  \label{fig:rosgraphnavigationplugin}
+\end{figure}
+
+Pengujian gerakan linear dan estimasi posisi di simulasi dilakukan dengan cara menjalankan lingkungan \emph{outdoor} pada simulator Gazebo,
+  menjalankan \emph{move for node} sebagai \emph{behavior node} dari pengujian,
+  dan menjalankan \emph{odometry echo node} untuk menampilkan hasil estimasi posisi dari kalkulasi odometri robot.
+Seperti yang terlihat pada gambar \ref{fig:rosgraphnavigationplugin},
+  \emph{node} \lstinline{/move_for} akan mengirimkan \emph{topic} \lstinline{/cmd_vel} yang memerintahkan \emph{node} \lstinline{/navigation_plugin} untuk menggerakkan robot sesuai dengan data kecepatan yang ada di \emph{topic} tersebut,
+  setelah itu \emph{node} \lstinline{/odometry_echo} akan menerima \emph{topic} \lstinline{/odom} yang menunjukkan estimasi posisi dari perhitungan yang dilakukan oleh \emph{node} \lstinline{/navigation_plugin}.
+
 \input{tabel/gerakan-linier-simulasi.tex}
 
-\input{grafik/gerakan-linier-simulasi.tex}
+Pengujian ini dilakukan dengan berbagai macam konfigurasi kecepatan X dan Y dari gerakan yang diinginkan untuk mengukur estimasi posisi dari perhitungan odometri.
+Hasil pengujian ini bisa dilihat pada tabel \ref{tb:gerakanliniersimulasi}.
+Pada tabel tersebut dapat diketahui bahwa gerakan yang diperintahkan kepada robot cenderung menghasilkan posisi robot yang sesuai dengan posisi perkiraan (\emph{estimated position}).
+Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
+  seperti yang terlihat pada gambar \ref{fig:grafikgerakanliniersimulasi},
+  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai walaupun dengan \emph{error} jarak yang relatif tidak kecil (kurang lebih 1-2 meter).
 
-\textcolor{red}{\lipsum[1-2]}
+\input{grafik/gerakan-linier-simulasi.tex}
