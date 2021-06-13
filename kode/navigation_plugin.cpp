@@ -13,8 +13,8 @@ public:
 private:
   rclcpp::Node::SharedPtr node;
 
-  rclcpp::Subscription<Twist>::SharedPtr twist_sub;
   rclcpp::Publisher<Odometry>::SharedPtr odometry_pub;
+  rclcpp::Subscription<Twist>::SharedPtr twist_sub;
 
   ...
 };
