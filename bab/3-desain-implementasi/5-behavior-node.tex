@@ -1,12 +1,19 @@
-\section{Behavior Node}
+\section{Pengembangan \emph{Behavior Node}}
 \label{sec:behaviornode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Behavior node} merupakan \emph{ROS 2 node} yang dibuat untuk mengatur tindakan yang akan dilakukan oleh SARs berdasarkan data yang diterima dari \emph{node} lain.
+Seperti yang dijelaskan di bagian \ref{sec:integrasiplugin},
+  \emph{behavior node} akan terhubung dengan \emph{node} lain yang secara abstrak merepresentasikan komponen yang dimiliki oleh robot \emph{Dienen} seperti penjelasan di bagian \ref{sec:modelrobot}.
+\emph{Behavior node} dijalankan secara terpisah dari \emph{node} yang mengatur komponen yang ada di robot seperti komponen kamera, \emph{depth camera}, \emph{manipulator}, dan navigasi.
+Terpisahnya \emph{behavior node} ini dilakukan untuk membuat pengujian pada SARs bisa dilakukan menggunakan berbagai macam data yang diterima,
+  baik itu data \emph{real-time} yang berasal dari robot \emph{real},
+  data yang direkam dari robot,
+  maupun data yang ada di simulasi.
 
-\subimport{5-behavior-node}{1-move-for-node.tex}
-\subimport{5-behavior-node}{2-patrol-position-node.tex}
-\subimport{5-behavior-node}{3-point-cloud-node.tex}
-\subimport{5-behavior-node}{4-pose-classifier-node.tex}
-\subimport{5-behavior-node}{5-rtabmap-node.tex}
-\subimport{5-behavior-node}{6-legs-client-node.tex}
-\subimport{5-behavior-node}{7-legs-teleop-node.tex}
+% \subimport{5-behavior-node}{1-move-for-node.tex}
+% \subimport{5-behavior-node}{2-patrol-position-node.tex}
+% \subimport{5-behavior-node}{3-point-cloud-node.tex}
+% \subimport{5-behavior-node}{4-pose-classifier-node.tex}
+% \subimport{5-behavior-node}{5-rtabmap-node.tex}
+% \subimport{5-behavior-node}{6-legs-client-node.tex}
+% \subimport{5-behavior-node}{7-legs-teleop-node.tex}
