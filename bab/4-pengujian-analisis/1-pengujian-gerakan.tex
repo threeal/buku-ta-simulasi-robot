@@ -1,7 +1,11 @@
 \section{Pengujian Gerakan}
 \label{sec:pengujiangerakan}
 
-\textcolor{red}{\lipsum[1-2]}
+Pengujian gerakan terbagi menjadi dua bagian,
+  yakni pengujian gerakan linier dan pengujian gerakan putar (\emph{angular movement}).
+Pengujian gerakan ini dilakukan untuk menguji perintah gerakan yang dikirim melalui \emph{topic} \lstinline{/cmd_vel} serta untuk menguji estimasi posisi dan orientasi dari perhitungan odometri yang dapat diterima melalui \emph{topic} \lstinline{/odom}.
+Kedua pengujian ini melibatkan komponen navigasi yang ada pada robot dan \emph{move for node} sebagai \emph{behavior node} yang mengatur tingkah laku robot.
+Dalam hal ini, tingkah laku yang dilakukan adalah memberikan perintah gerakan pada robot selama selang waktu tertentu.
 
 \subimport{1-pengujian-gerakan}{1-linier-simulasi.tex}
 \subimport{1-pengujian-gerakan}{2-linier-robot.tex}
