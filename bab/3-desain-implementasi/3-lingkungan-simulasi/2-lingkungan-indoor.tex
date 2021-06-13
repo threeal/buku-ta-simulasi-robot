@@ -1,4 +1,27 @@
 \subsection{Lingkungan Simulasi \emph{Indoor}}
 \label{subsec:lingkunganindoor}
 
-\textcolor{red}{\lipsum[1-2]}
+Lingkungan simulasi \emph{indoor} dibuat dengan menyusun \emph{file} SDFormat yang berisi ruangan tertutup dengan berbagai macam objek di dalamnya.
+Seperti yang terlihat pada potongan kode \ref{lst:indoorworldsdf},
+  lingkungan ini terdiri atas objek pencahayaan dan \emph{include file} pada \emph{path} \lstinline{model://cafe}, \lstinline{model://cafe_table}, \lstinline{model://dienen_robot}, dan \lstinline{model://dienen_human}.
+Dua \emph{path} pertama merupakan \emph{path} dari model yang sudah disediakan oleh Gazebo,
+  yang membentuk lingkungan kafe beserta perabotan yang ada di dalamnya,
+  sedangkan dua \emph{path} terakhir merupakan \emph{path} dari model robot dan model pengguna yang sebelumnya sudah dibuat di bagian \ref{sec:modelrobot} dan \ref{sec:modelpengguna}.
+
+\lstinputlisting[
+  language=XML,
+  caption={Struktur SDFormat dari lingkungan simulasi \emph{indoor}.},
+  label={lst:indoorworldsdf}
+]{kode/indoor_world_sdf.xml}
+
+Setelah \emph{file} SDFormat dibuat,
+  hasil yang didapatkan setelah dijalankan pada simulator tampak seperti pada gambar \ref{fig:lingkunganindoor}.
+Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
+  tampak adanya model robot dan pengguna di dalam sebuah ruangan kafe dengan berbagai macam perabotan yang ada di dalamnya seperti meja, brankas, dan lain sebagainya.
+
+\begin{figure} [ht]
+  \centering
+  \includegraphics[scale=0.23]{gambar/lingkungan-indoor.png}
+  \caption{Tampilan lingkungan simulasi \emph{indoor} pada Gazebo.}
+  \label{fig:lingkunganindoor}
+\end{figure}

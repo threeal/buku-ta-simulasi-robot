@@ -6,17 +6,17 @@ Lingkungan simulasi ini dibuat untuk memudahkan pengujian gerakan pada robot seh
 Seperti yang terlihat pada potongan kode \ref{lst:outdoorworldsdf},
   lingkungan ini terdiri atas sebuah objek pencahayaan yang berupa \emph{light element},
   dan dua \emph{include file} pada \emph{path} \lstinline{model://ground_plane} dan pada \emph{path} \lstinline{model://dienen_robot}.
-Kedua \emph{include file} tersebut digunakan untuk memasukkan model \emph{ground plane} yang sudah disediakan oleh Gazebo dan model robot yang telah dibuat sebelumnya.
+Kedua \emph{include file} tersebut digunakan untuk memasukkan model \emph{ground plane} yang sudah disediakan oleh Gazebo dan model robot yang telah dibuat sebelumnya di bagian \ref{sec:modelrobot}.
 Di lingkungan ini, model \emph{ground plane} diperlukan untuk memberikan \emph{collision} pada dasar lingkungan sehingga model robot tidak jatuh terus menerus ke bawah karena pengaruh gravitasi di simulasi.
 
 \lstinputlisting[
   language=XML,
-  caption={Struktur SDFormat dari lingkungan simulasi outdoor.},
+  caption={Struktur SDFormat dari lingkungan simulasi \emph{outdoor}.},
   label={lst:outdoorworldsdf}
 ]{kode/outdoor_world_sdf.xml}
 
 Setelah \emph{file} SDFormat dibuat,
-  hasil yang didapatkan setelah simulator dijalankan tampak seperti pada gambar \ref{fig:lingkunganoutdoor}.
+  hasil yang didapatkan setelah dijalankan pada simulator tampak seperti pada gambar \ref{fig:lingkunganoutdoor}.
 Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
   tampak adanya model robot dengan objek \emph{ground plane} yang ada di bawah,
   sedangkan objek pencahayaan tampak dengan adanya bayangan dari robot dan gradasi warna cerah pada objek \emph{ground plane}.
@@ -24,6 +24,6 @@ Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
 \begin{figure} [ht]
   \centering
   \includegraphics[scale=0.23]{gambar/lingkungan-outdoor.png}
-  \caption{Tampilan lingkungan simulasi outdoor pada Gazebo.}
+  \caption{Tampilan lingkungan simulasi \emph{outdoor} pada Gazebo.}
   \label{fig:lingkunganoutdoor}
 \end{figure}

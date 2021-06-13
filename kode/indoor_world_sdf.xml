@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="indoor">
+
+    <light name="sun" type="directional">
+      ...
+    </light>
+
+    <include>
+      <uri>model://cafe</uri>
+    </include>
+
+    <include>
+      <pose>0.5 -1.6 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    ...
+
+    <include>
+      <pose>-2 -1 1.0 0 0 0</pose>
+      <uri>model://dienen_robot</uri>
+    </include>
+
+    <include>
+      <pose>0 0 1.0 0 0 0</pose>
+      <uri>model://dienen_human</uri>
+    </include>
+
+  </world>
+</sdf>
