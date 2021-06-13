@@ -1,0 +1,19 @@
+\section{Pengembangan Model Pengguna}
+\label{sec:modelpengguna}
+
+Model pengguna yang ada di simulasi akan dibuat menyerupai bentuk manusia yang dapat berinteraksi dengan robot.
+Pada kondisi pengujian menggunakan robot \emph{real},
+  pengguna akan berinteraksi dengan robot melalui \emph{smart assistive posture device} yang digunakan untuk mengirimkan data ke robot yang berupa koordinat posisi dan orientasi pengguna,
+  masukan suara yang diberikan pengguna melalui \emph{voice recognition},
+  dan kondisi postur kaki dari pengguna, apakah sedang berdiri atau duduk.
+Dengan adanya model pengguna ini,
+  pengujian yang ada di simulasi dapat dilakukan terhadap model pengguna dengan perilaku yang sudah diprogram di awal,
+  dan terhadap pengguna \emph{real} yang berinteraksi dengan model robot di simulasi melalui data yang dikirim dari \emph{smart assistive posture device}.
+
+Pada simulator Gazebo terdapat objek \emph{Gazebo Actors} yang dapat digunakan untuk menampilkan model manusia yang dapat bergerak dan melakukan animasi seperti berjalan, duduk, dan lain sebagainya.
+Namun, objek tersebut sulit untuk diubah animasinya ketika simulasi sudah berjalan,
+  sehingga kondisi perubahan postur kaki dari pengguna tidak bisa ditampilkan di model yang ada di simulasi.
+Oleh karena itu, pada penelitian ini model pengguna dibuat dengan cara yang sama dengan model robot dengan memisahkan setiap bagian pengguna yang dapat bergerak bebas menjadi \emph{link element} dan kemudian akan saling terhubung menggunakan \emph{joint element}.
+
+\subimport{2-model-pengguna}{1-model-3d-robot.tex}
+\subimport{2-model-pengguna}{2-struktur-sdf-pengguna.tex}
