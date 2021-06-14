@@ -1,0 +1,13 @@
+\begin{longtable}{|c|c|c|c|}
+  \caption{Hasil estimasi orientasi dari gerakan putar di simulasi selama 10 detik.}
+  \label{tb:gerakanputarsimulasi}
+  \\ \hline \rowcolor[HTML]{E0E0E0}
+  Speed & Expected & Measured & Odometry
+  \\ \hline \rowcolor[HTML]{E0E0E0}
+  Z (rad/min) & Z (deg) & Z (deg) & Z (deg)
+  \csvreader[head to column names]{data/gerakan_putar_simulasi.csv}{}{
+    \\ \hline
+    \speed & \expected & \measured & \odometry
+  }
+  \\ \hline
+\end{longtable}

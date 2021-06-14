@@ -1,0 +1,46 @@
+
+\begin{figure} [ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.45\textwidth,
+        width=0.9\textwidth,
+        ylabel=X (meter),
+        xticklabels={,,},
+        ymajorgrids,
+        bar width=3pt,
+        ybar=0pt,
+        xmin=0,
+        xmax=13,
+      ]
+      \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=odometryx,col sep=comma]{data/gerakan_linier_robot.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.45\textwidth,
+        width=0.9\textwidth,
+        ylabel=Y (meter),
+        xticklabels={,,},
+        legend style={
+          at={(0.5,-0.2)},
+          anchor=north,
+          legend columns=-1,
+        },
+        ymajorgrids,
+        bar width=3pt,
+        ybar=0pt,
+        xmin=0,
+        xmax=13,
+      ]
+      \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=odometryy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \legend{Expected,Measured,Odometry}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Grafik estimasi posisi dari gerakan linier pada \emph{real robot}.}
+  \label{fig:grafikgerakanlinierrobot}
+\end{figure}

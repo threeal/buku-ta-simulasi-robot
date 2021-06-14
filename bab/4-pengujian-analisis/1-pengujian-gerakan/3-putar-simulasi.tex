@@ -1,4 +1,20 @@
 \subsection{Pengujian Gerakan Putar dan Estimasi Orientasi di Simulasi}
 \label{subsec:putarsimulasi}
 
-\textcolor{red}{\lipsum[1-2]}
+Pengujian gerakan putar dan estimasi orientasi di simulasi dilakukan dengan menjalankan \emph{node} yang sama seperti yang ada pada pengujian di bagian \ref{subsec:liniersimulasi}.
+Perbedaannya, pengujian ini dilakukan pada beberapa nilai kecepatan putar di sumbu Z selama 10 detik.
+
+Hasil pengujian ini bisa dilihat pada tabel \ref{tb:gerakanputarsimulasi}.
+Pada tabel tersebut, nilai yang ada di kolom \emph{speed} adalah besar kecepatan yang diatur pada \emph{topic} \lstinline{/cmd/vel},
+  nilai yang ada di kolom \emph{estimated} didapatkan dari perkalian besar kecepatan putar dengan durasi pengujian,
+  nilai yang ada di kolom \emph{measured} didapatkan dari orientasi model yang ada di simulasi,
+  dan terakhir nilai yang ada di kolom \emph{odometry} didapatkan dari data orientasi yang ada pada \emph{topic} \lstinline{/odom}.
+
+\input{tabel/gerakan-putar-simulasi.tex}
+
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa gerakan putar yang diperintahkan kepada robot cenderung menghasilkan orientasi robot yang sesuai dengan orientasi perkiraan (\emph{estimated orientation}).
+Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
+  seperti yang terlihat pada gambar \ref{fig:grafikgerakanputarsimulasi},
+  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai dengan yang diharapkan (\emph{expected}).
+
+\input{grafik/gerakan-putar-simulasi.tex}

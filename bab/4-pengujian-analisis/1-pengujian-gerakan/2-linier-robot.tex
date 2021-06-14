@@ -1,4 +1,32 @@
-\subsection{Pengujian Gerakan Linier dan Estimasi Posisi di Robot}
+\subsection{Pengujian Gerakan Linier dan Estimasi Posisi pada \emph{Real Robot}}
 \label{subsec:linierrobot}
 
-\textcolor{red}{\lipsum[1-2]}
+Pengujian gerakan linier dan estimasi posisi pada \emph{real robot} dilakukan dengan cara yang sama dengan yang dilakukan di simulasi seperti yang ada di bagian \ref{subsec:liniersimulasi}.
+Perbedaannya, pada pengujian ini komponen navigasi yang sebelumnya berasal dari simulasi digantikan dengan \emph{navigation node} yang mengakses perangkat yang ada pada \emph{real robot}.
+Seperti yang terlihat pada gambar \ref{fig:rosgraphnavigation},
+  \emph{node} \lstinline{/move_for} akan mengirimkan \emph{topic} \lstinline{/cmd_vel} dengan fungsi yang sama ke \emph{node} \lstinline{/navigation},
+  setelah itu \emph{node} \lstinline{/odometry_echo} akan menerima \emph{topic} \lstinline{/odom} yang berasal dari \emph{node} \lstinline{/navigation}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.35]{gambar/rosgraph-navigation.png}
+  \caption{Relasi antar-\emph{node} dari pengujian gerakan linier dan estimasi posisi pada \emph{real robot}.}
+  \label{fig:rosgraphnavigation}
+\end{figure}
+
+Pengujian pada \emph{real robot} ini juga dilakukan dengan berbagai macam konfigurasi kecepatan X dan Y yang diperintahkan selama 3 detik.
+Hasil pengujian ini bisa dilihat pada tabel \ref{tb:gerakanlinierrobot}.
+Pada tabel tersebut, nilai yang ada di kolom \emph{speed} adalah besar kecepatan yang diatur pada \emph{topic} \lstinline{/cmd_vel},
+  nilai yang ada di kolom \emph{estimated position} didapatkan dari perkalian besar kecepatan dengan durasi pengujian,
+  nilai yang ada di kolom \emph{measured position} didapatkan dari pengukuran perpindahan \emph{real robot} menggunakan meter ukur,
+  dan terakhir nilai yang ada di kolom \emph{odometry position} didapatkan dari data yang ada di \emph{topic} \lstinline{/odom}.
+
+\input{tabel/gerakan-linier-robot.tex}
+
+Seperti kesimpulan pada pengujian sebelumnya,
+  dari data yang dihasilkan oleh pengujian ini juga dapat diketahui bahwa gerakan yang diperintahkan robot cenderung menghasilkan posisi robot yang sesuai dengan posisi perkiraan (\emph{estimated position}).
+Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
+  seperti yang terlihat pada gambar \ref{fig:grafikgerakanlinierrobot},
+  hasil yang didapatkan juga cenderung memiliki arah positif dan negatif yang sesuai dengan yang diharapkan (\emph{expected}) dan sama dengan yang dihasilkan pada pengujian sebelumnya.
+
+\input{grafik/gerakan-linier-robot.tex}
