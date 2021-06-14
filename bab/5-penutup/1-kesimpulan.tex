@@ -1,0 +1,15 @@
+\section{Kesimpulan}
+\label{sec:kesimpulan}
+
+Berdasarkan hasil pengujian yang telah dilakukan,
+  dapat disimpulkan bahwa lingkungan simulasi yang dibuat pada simulator Gazebo dapat digunakan untuk melakukan pengujian pada SARs secara virtual.
+Hasil pembacaan data sensor pada robot, seperti kamera dan \emph{depth camera},
+  dapat disimulasikan pada lingkungan yang dibuat sehingga memungkinkan pengambilan data pengujian untuk dilakukan secara virtual.
+Selain itu, dengan adanya lingkungan virtual,
+  pengujian dapat dilakukan pada berbagai macam kondisi lingkungan yang diinginkan tanpa perlu mengeluarkan biaya tambahan untuk membeli perabotan maupun merenovasi ruangan seperti yang perlu dilakukan pada pengujian \emph{real}.
+
+Kemudian, Dengan adanya abstraksi dari sistem kontroler yang dibuat menggunakan ROS 2,
+  program \emph{behavior} yang diujikan pada model robot di simulasi memiliki hasil yang sama ketika diujikan pada robot fisik.
+Selama pengujian, terdapat beberapa program yang sudah tersedia di ROS 2 sehingga pengujian dapat dilakukan dengan mudah tanpa perlu menulis keseluruhan program yang diperlukan untuk melakukan pengujian.
+Lebih lanjut, dengan performa yang dimiliki oleh ROS 2,
+  pertukaran data yang terjadi antara program yang terabstraksi dapat dilakukan secara \emph{real-time} dengan \emph{delay} yang rendah.
