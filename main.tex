@@ -75,20 +75,43 @@
 
 \subimport{pustaka}{tanda-hubung.tex}
 
+\newenvironment{cover}[1]{
+  \AddToShipoutPictureBG*{
+    \AtPageLowerLeft{
+      \hspace{-3.5mm}
+      \raisebox{0mm}{
+        \includegraphics[width=\paperwidth,height=\paperheight]{#1}
+      }
+    }
+  }
+  \thispagestyle{empty}
+  \newgeometry{top=95mm,left=25mm,right=20mm,bottom=25mm}
+  \begin{flushleft}
+    \sffamily
+    \fontseries{bx}
+    \selectfont
+}{
+  \end{flushleft}
+  \restoregeometry
+}
+
 \begin{document}
 
-  \newcommand\covercontents{konten-id.tex}
-
-  \subimport{sampul}{sampul-luar.tex}
+  \begin{cover}{sampul/gambar/sampul-luar.png}
+    \color{white}
+    \subimport{sampul}{sampul-id.tex}
+  \end{cover}
 
   \setcounter{page}{1}
 
-  \subimport{sampul}{sampul-dalam.tex}
+  \begin{cover}{sampul/gambar/sampul-dalam.png}
+    \subimport{sampul}{sampul-id.tex}
+  \end{cover}
   \cleardoublepage
 
-  \renewcommand\covercontents{konten-en.tex}
-
-  \subimport{sampul}{sampul-dalam.tex}
+  \begin{cover}{sampul/gambar/sampul-dalam.png}
+    \subimport{sampul}{sampul-en.tex}
+  \end{cover}
   \cleardoublepage
 
   \setlength{\parindent}{2em}
