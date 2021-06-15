@@ -1,15 +1,16 @@
 \subsection{Lingkungan Simulasi \emph{Indoor}}
 \label{subsec:lingkunganindoor}
 
-Lingkungan simulasi \emph{indoor} dibuat dengan menyusun \emph{file} SDFormat yang berisi ruangan tertutup dengan berbagai macam objek di dalamnya.
+Lingkungan simulasi \emph{indoor} dibuat dengan menyusun \emph{file} SDFormat yang berisi ruangan tertutup dengan berbagai macam obyek di dalamnya.
 Seperti yang terlihat pada potongan kode \ref{lst:indoorworldsdf},
-  lingkungan ini terdiri atas objek pencahayaan dan \emph{include file} pada \emph{path} \lstinline{model://cafe}, \lstinline{model://cafe_table}, \lstinline{model://dienen_robot}, dan \lstinline{model://dienen_human}.
+  lingkungan ini terdiri atas obyek pencahayaan dan \emph{include file} pada \emph{path} \lstinline{model://cafe}, \lstinline{model://cafe_table}, \lstinline{model://dienen_robot}, dan \lstinline{model://dienen_human}.
 Dua \emph{path} pertama merupakan \emph{path} dari model yang sudah disediakan oleh Gazebo,
   yang membentuk lingkungan kafe beserta perabotan yang ada di dalamnya,
   sedangkan dua \emph{path} terakhir merupakan \emph{path} dari model robot dan model pengguna yang sebelumnya sudah dibuat di bagian \ref{sec:modelrobot} dan \ref{sec:modelpengguna}.
 
 \lstinputlisting[
   language=XML,
+  style=code,
   caption={Struktur SDFormat dari lingkungan simulasi \emph{indoor}.},
   label={lst:indoorworldsdf}
 ]{kode/sdf/indoor_world.xml}
@@ -17,7 +18,7 @@ Dua \emph{path} pertama merupakan \emph{path} dari model yang sudah disediakan o
 Setelah \emph{file} SDFormat dibuat,
   hasil yang didapatkan setelah dijalankan pada simulator tampak seperti pada gambar \ref{fig:lingkunganindoor}.
 Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
-  tampak adanya model robot dan pengguna di dalam sebuah ruangan kafe dengan berbagai macam perabotan yang ada di dalamnya seperti meja, brankas, dan lain sebagainya.
+  tampak adanya model robot dan pengguna di dalam sebuah ruangan kafe dengan berbagai macam perabotan yang ada di dalamnya seperti meja, lemari, jendela, dan lain sebagainya.
 
 \begin{figure}[ht]
   \centering

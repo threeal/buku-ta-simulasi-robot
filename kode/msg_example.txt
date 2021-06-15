@@ -1,0 +1,4 @@
+uint8 x 42
+int16 y -2000
+string full_name
+float32[] samples

@@ -9,7 +9,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[numbers]{natbib}
+\usepackage{caption}
 \usepackage{changepage}
+\usepackage{csvsimple}
 \usepackage{enumitem}
 \usepackage{eso-pic}
 \usepackage{etoolbox}
@@ -19,16 +21,17 @@
 \usepackage{lmodern}
 \usepackage{longtable}
 \usepackage{multido}
+\usepackage{pdflscape}
 \usepackage{rotating}
 \usepackage{tabularx}
 \usepackage{wrapfig}
-\usepackage{csvsimple}
 
 \patchcmd{\cleardoublepage}{\hbox{}}{
   \thispagestyle{empty}
   \vspace*{\fill}
   \begin{center}\textit{[Halaman ini sengaja dikosongkan]}\end{center}
-  \vfill}{}{}
+  \vfill
+}{}{}
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -53,7 +56,7 @@
 \definecolor{comment}{RGB}{0,128,0}
 \definecolor{string}{RGB}{255,0,0}
 \definecolor{keyword}{RGB}{0,0,255}
-\lstdefinestyle{codestyle}{
+\lstdefinestyle{code}{
   commentstyle=\color{comment},
   stringstyle=\color{string},
   keywordstyle=\color{keyword},
@@ -68,7 +71,14 @@
   upquote=true,
   tabsize=2,
 }
-\lstset{style=codestyle}
+\lstdefinestyle{inline}{
+  breaklines=true,
+  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+  showstringspaces=true,
+  upquote=true,
+  tabsize=2,
+}
+\lstset{style=inline}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -125,33 +135,39 @@
 
   \pagenumbering{roman}
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{ABSTRAK}
   \subimport{abstrak}{abstrak-id.tex}
   \cleardoublepage
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{ABSTRACT}
   \subimport{abstrak}{abstrak-en.tex}
   \cleardoublepage
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{KATA PENGANTAR}
   \subimport{lainnya}{kata-pengantar.tex}
   \cleardoublepage
 
   \renewcommand*\contentsname{DAFTAR ISI}
-  \addcontentsline{toc}{chapter}{\contentsname}
   \tableofcontents
+  \addcontentsline{toc}{chapter}{\contentsname}
   \cleardoublepage
 
   \renewcommand*\listfigurename{DAFTAR GAMBAR}
-  \addcontentsline{toc}{chapter}{\listfigurename}
   \listoffigures
+  \addcontentsline{toc}{chapter}{\listfigurename}
   \cleardoublepage
 
   \renewcommand*\lstlistlistingname{DAFTAR KODE}
-  \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \lstlistoflistings
+  \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \cleardoublepage
 
   \renewcommand*\listtablename{DAFTAR TABEL}
-  \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
+  \addcontentsline{toc}{chapter}{\listtablename}
   \cleardoublepage
 
   \pagenumbering{arabic}
@@ -172,9 +188,9 @@
   \cleardoublepage
 
   \renewcommand\bibname{DAFTAR PUSTAKA}
+  \bibliographystyle{IEEEtranN}
+  \bibliography{pustaka/bibliografi.bib}
   \addcontentsline{toc}{chapter}{\bibname}
-  \bibliographystyle{unsrtnat}
-  \bibliography{pustaka/kutipan.bib}
   \cleardoublepage
 
 \end{document}

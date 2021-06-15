@@ -18,30 +18,32 @@ Sedangkan yang kedua adalah untuk mengubah posisi \emph{joints} di kaki menjadi 
 
 \lstinputlisting[
   language=C++,
+  style=code,
   caption={\emph{Class} dari \emph{legs plugin}.},
   label={lst:legsplugin}
 ]{kode/plugin/legs_plugin.cpp}
 
-Sama seperti \emph{navigation plugin} yang ada di bagian \ref{subsec:navigationplugin},
-  seperti yang terlihat pada potongan kode \ref{lst:legsplugin},
-  \emph{plugin} ini juga ditulis dalam bahasa C++ dan dibuat dengan menurunkan \emph{class} \lstinline{gazebo::ModelPlugin} sebagai \emph{parent class} dari \emph{class} ini.
-\emph{Plugin} ini menggunakan objek \lstinline{beine_cpp::LegsConsumer} yang memudahkan \emph{subscription} dari \emph{topic} yang berhubungan dengan data yang dikirim oleh \emph{smart assistive posture device}.
+Sama seperti yang ada pada \emph{navigation plugin},
+  \emph{plugin} ini juga dibuat dengan menurunkan \emph{class} \lstinline{gazebo::ModelPlugin} sebagai \emph{parent class} dari \emph{class} ini.
+seperti yang terlihat pada potongan kode \ref{lst:legsplugin},
+  \emph{Plugin} ini menggunakan obyek \lstinline{beine_cpp::LegsConsumer} yang memudahkan \emph{subscription} dari \emph{topic} yang berhubungan dengan data yang dikirim oleh \emph{smart assistive posture device}.
 Data tersebut berupa data posisi yang dikirim melalui \emph{topic} \lstinline{/position},
   data orientasi yang dikirim melalui \emph{topic} \lstinline{/orientation},
   data perintah suara yang dikirim melalui \emph{topic} \lstinline{/command},
   dan data postur kaki yang dikirim melalui \emph{topic} \lstinline{/stance}.
 
 Setelah \emph{plugin} dibuat,
-  file SDFormat dari model robot perlu diubah dengan menyematkan \emph{plugin element} di file tersebut.
+  file SDFormat dari model robot perlu diubah dengan menyematkan \emph{element} \lstinline{plugin} di file tersebut.
 Seperti yang terlihat pada potongan kode \ref{lst:integrasilegsplugin},
-  \emph{plugin element} disematkan sebagai \emph{child element} dari \emph{model element}.
+  \emph{element} \lstinline{plugin} disematkan sebagai \emph{child element} dari \emph{element} \lstinline{model}.
 Pada \emph{legs plugin},
   beberapa \emph{child element} lain perlu disematkan pada plugin tersebut,
-  seperti \emph{joint force strength element} dan \emph{joint force smoothness element} yang menentukan bagaimana transisi postur kaki terjadi,
-  serta \emph{left hip pitch joint element}, \emph{left knee pitch joint element}, dan lain sebagainya yang menentukan \emph{joint element} yang akan diubah ketika terjadi transisi pada postur kaki pengguna.
+  seperti \emph{element} \lstinline{joint_force_strength} dan \emph{element} \lstinline{joint_force_smoothness} yang menentukan bagaimana transisi postur kaki terjadi,
+  serta \emph{element} \lstinline{left_hip_pitch_joint}, dan \emph{element} \lstinline{left_knee_pitch_joint}, dan lain sebagainya yang menentukan \emph{element} \lstinline{joint} yang akan diubah ketika terjadi transisi pada postur kaki pengguna.
 
 \lstinputlisting[
   language=XML,
+  style=code,
   caption={Integrasi \emph{legs plugin} pada model pengguna.},
   label={lst:integrasilegsplugin}
 ]{kode/sdf/plugin/legs_plugin.xml}

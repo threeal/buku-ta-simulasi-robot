@@ -15,17 +15,17 @@ Seperti yang terlihat pada gambar \ref{fig:komponenrobot},
   robot \emph{Dienen} memiliki beberapa komponen yang bisa dikelompokkan menjadi 4 bagian terpisah, yakni sebuah kamera, \emph{depth camera}, \emph{manipulator}, dan navigasi.
 
 Komponen kamera yang ada pada robot digunakan untuk menangkap citra yang nantinya bisa digunakan untuk melakukan proses visi komputer.
-Dengan adanya kamera ini, robot diharapkan mampu memperoleh masukan yang bisa berupa deteksi pengguna maupun deteksi objek yang ada di lingkungan.
+Dengan adanya kamera ini, robot diharapkan mampu memperoleh masukan yang bisa berupa deteksi pengguna maupun deteksi obyek yang ada di lingkungan.
 
 Komponen \emph{depth camera} yang ada pada robot dapat digunakan untuk menangkap dua macam citra,
   yakni citra berwarna dan citra kedalaman (\emph{depth image}).
-Citra gambar yang ditangkap memiliki format RGBA sedangkan citra kedalaman yang ditangkap memiliki format \emph{grayscale} dengan nilai yang semakin gelap menunjukkan jarak yang lebih jauh dari kamera.
+Citra berwarna yang ditangkap memiliki format RGBA sedangkan citra kedalaman yang ditangkap memiliki format \emph{grayscale} dengan nilai yang semakin gelap menunjukkan jarak yang lebih jauh dari kamera.
 \emph{Depth Camera} ini nantinya bisa digunakan untuk melakukan pemetaan ruangan sekaligus meningkatkan keakuratan posisi dan orientasi dari robot menggunakan metode SLAM (\emph{simultaneous localization and mapping}).
 
 Komponen \emph{manipulator} yang ada pada robot terdiri dari dua buah lengan dengan lima buah \emph{joints} di setiap lengan.
-Lengan \emph{manipulator} ini memiliki sebuah \emph{gripper} di ujung lengan yang dapat digunakan untuk menggenggam sebuah objek.
+Lengan \emph{manipulator} ini memiliki sebuah \emph{gripper} di ujung lengan yang dapat digunakan untuk menggenggam sebuah obyek.
 Dengan adanya lengan \emph{manipulator} ini,
-  robot diharapkan mampu memberikan tindakan \emph{assistive} seperti membantu untuk membawakan maupun memberikan sebuah objek kepada pengguna.
+  robot diharapkan mampu memberikan tindakan \emph{assistive} seperti membantu untuk membawakan maupun memberikan sebuah obyek kepada pengguna.
 
 Komponen navigasi yang ada pada robot merujuk pada komponen yang memungkinkan pergerakan yang ada pada robot.
 Komponen ini terdiri atas tiga buah \emph{omnidirectional wheels} yang terpasang secara \emph{holonomic} sehingga memungkinkan pergerakan ke segala arah,
