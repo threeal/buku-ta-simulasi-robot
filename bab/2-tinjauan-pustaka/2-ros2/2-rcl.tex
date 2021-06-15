@@ -1,4 +1,16 @@
 \subsection{ROS 2 Client Libraries (RCL)}
 \label{subsec:rcl}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{ROS 2 client libraries} (RCL), atau \emph{ROS 2 client interfaces},
+  merupakan sekumpulan \emph{high-level libraries} yang digunakan untuk menjalankan fungsionalitas yang ada di ROS 2 seperti pembuatan \emph{node}, \emph{publisher}, \emph{subscription}, dan lain sebagainya \citep{url:rclconcept}.
+Seperti yang terlihat pada gambar \ref{fig:layersistemros2},
+  RCL berperan untuk menghubungan \emph{user space} dengan RMW,
+  dimana \emph{user space} ini merupakan keseluruhan lingkup yang digunakan oleh pengguna untuk menjalankan sistem yang ada pada robot.
+
+Untuk saat ini, RCL dapat digunakan pada berbagai macam bahasa pemrograman,
+  semuanya dibentuk sebagai \emph{ROS 2 package} yang berisi \emph{headers},
+  \emph{modules}, maupun \emph{libraries} dari bahasa pemrograman tersebut.
+Sebagai contoh, untuk bahasa pemrograman C bisa menggunakan \emph{package} \lstinline{rcl},
+  untuk bahasa pemrograman C++ bisa menggunakan \emph{package} \lstinline{rclcpp},
+  dan untuk bahasa pemrograman Python bisa menggunakan \emph{package} \lstinline{rclpy}.
+Selain itu ada juga implementasi RCL untuk bahasa pemrograman lain yang masih dalam tahap pengembangan seperti pada \emph{package} \lstinline{rclnodejs} \citep{url:rclnodejs} untuk bahasa pemrograman JavaScript yang berbasis Node.js.
