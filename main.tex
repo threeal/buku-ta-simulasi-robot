@@ -54,7 +54,7 @@
 \definecolor{comment}{RGB}{0,128,0}
 \definecolor{string}{RGB}{255,0,0}
 \definecolor{keyword}{RGB}{0,0,255}
-\lstdefinestyle{codestyle}{
+\lstdefinestyle{code}{
   commentstyle=\color{comment},
   stringstyle=\color{string},
   keywordstyle=\color{keyword},
@@ -69,7 +69,14 @@
   upquote=true,
   tabsize=2,
 }
-\lstset{style=codestyle}
+\lstdefinestyle{inline}{
+  breaklines=true,
+  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+  showstringspaces=true,
+  upquote=true,
+  tabsize=2,
+}
+\lstset{style=inline}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
