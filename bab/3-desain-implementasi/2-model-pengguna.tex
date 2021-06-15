@@ -10,9 +10,10 @@ Dengan adanya model pengguna ini,
   pengujian yang ada di simulasi dapat dilakukan terhadap model pengguna dengan perilaku yang sudah diprogram di awal,
   serta terhadap \emph{real user} yang berinteraksi dengan model robot di simulasi melalui data yang dikirim dari \emph{smart assistive posture device}.
 
-Pada simulator Gazebo terdapat objek \emph{Gazebo Actors} yang dapat digunakan untuk menampilkan model manusia yang dapat bergerak dan melakukan animasi seperti berjalan, duduk, dan lain sebagainya.
-Namun, objek tersebut sulit untuk diubah animasinya ketika simulasi sudah berjalan,
+Pada simulator Gazebo terdapat obyek \emph{Gazebo Actor} yang dapat digunakan untuk menampilkan model manusia yang dapat bergerak dan melakukan animasi seperti berjalan, duduk, dan lain sebagainya.
+Namun, obyek tersebut sulit untuk diubah animasinya ketika simulasi sudah berjalan,
   sehingga kondisi perubahan postur kaki dari pengguna tidak bisa ditampilkan di model yang ada di simulasi.
-Oleh karena itu, pada penelitian ini model pengguna dibuat dengan cara yang sama dengan model robot dengan memisahkan setiap bagian pengguna yang dapat bergerak bebas menjadi \emph{link element} dan kemudian akan saling terhubung menggunakan \emph{joint element}.
+Oleh karena itu, pada penelitian ini model pengguna dibuat dengan cara yang sama dengan model robot,
+  yakni sebagai \emph{Gazebo Model} dengan memisahkan setiap bagian pengguna yang dapat bergerak bebas menjadi \emph{link element} dan kemudian akan saling terhubung menggunakan \emph{joint element}.
 
 \subimport{2-model-pengguna}{1-sdformat-pengguna.tex}

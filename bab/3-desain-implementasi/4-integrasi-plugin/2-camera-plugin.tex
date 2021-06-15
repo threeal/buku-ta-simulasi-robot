@@ -15,7 +15,7 @@
 
 Seperti yang terlihat pada potongan kode \ref{lst:integrasicameraplugin},
   sebuah \emph{plugin element} ditambahkan sebagai \emph{child element} dari \emph{sensor element}.
-Sama seperti \emph{plugin} sebelumnya, \emph{plugin} ini juga menggunakan \emph{name attribute} untuk menentukan nama node dan \emph{filename attribute} untuk menentukan \emph{shared library} dari \emph{plugin} yang telah dikompilasi.
+\emph{Plugin} ini menggunakan \emph{name attribute} untuk menentukan nama node dan \emph{filename attribute} untuk menentukan \emph{shared library} dari \emph{plugin} yang telah dikompilasi.
 Dalam hal ini \emph{plugin} yang digunakan adalah \emph{plugin} \lstinline{gazebo_ros_camera} dari \emph{package} \lstinline{gazebo_ros}.
 Sebagai tambahan, \emph{plugin} ini menggunakan \emph{camera name element} untuk menentukan \emph{namespace} dari \emph{topic} yang digunakan,
   sehingga dengan \emph{camera name element} bernilai \emph{camera} maka \emph{topic} yang digunakan adalah \lstinline{/camera/image_raw} dan \lstinline{/camera/camera_info}.
