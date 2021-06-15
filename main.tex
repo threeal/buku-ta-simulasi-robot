@@ -10,6 +10,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[numbers]{natbib}
 \usepackage{changepage}
+\usepackage{csvsimple}
 \usepackage{enumitem}
 \usepackage{eso-pic}
 \usepackage{etoolbox}
@@ -22,13 +23,13 @@
 \usepackage{rotating}
 \usepackage{tabularx}
 \usepackage{wrapfig}
-\usepackage{csvsimple}
 
 \patchcmd{\cleardoublepage}{\hbox{}}{
   \thispagestyle{empty}
   \vspace*{\fill}
   \begin{center}\textit{[Halaman ini sengaja dikosongkan]}\end{center}
-  \vfill}{}{}
+  \vfill
+}{}{}
 
 \usepackage{fancyhdr}
 \fancyhf{}
