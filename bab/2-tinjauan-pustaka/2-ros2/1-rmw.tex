@@ -8,6 +8,12 @@ Pada ROS 2, \emph{middleware} yang digunakan berbasis pada sistem yang dimiliki 
   Eclipse Cyclone DDS \citep{url:cyclonedds},
   dan sebagainya.
 
+\begin{sidewaysfigure}
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{gambar/diagram-sistem-ros2.png}
+  \caption{Diagram sistem yang ada pada ROS 2 \citep{url:ros2interfacesconcept}.}
+  \label{fig:diagramsistemros2}
+\end{sidewaysfigure}
+
 Seperti yang terlihat pada gambar \ref{fig:diagramsistemros2},
   sistem komunikasi yang ada pada ROS 2 terdiri atas \emph{user application} di bagian paling atas,
   kemudian \emph{ROS 2 client library} (RCL) dengan implementasi bahasanya masing-masing,
@@ -20,10 +26,3 @@ Saat ini ROS 2 sudah mendukung beberapa implementasi DDS yang bisa digunakan seb
   Implementasi tersebut dibentuk sebagai \emph{ROS 2 package} seperti pada \emph{package} \lstinline{rmw_connextdds} yang digunakan untuk menjalankan implementasi DDS dari RTI Connext DDS,
   \emph{package} \lstinline{rmw_fastrtps} yang digunakan untuk menjalankan implementasi DDS dari eProsima Fast DDS,
   dan lain sebagainya.
-
-\begin{sidewaysfigure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth,keepaspectratio]{gambar/diagram-sistem-ros2.png}
-  \caption{Diagram sistem yang ada pada ROS 2 \citep{url:ros2interfacesconcept}.}
-  \label{fig:diagramsistemros2}
-\end{sidewaysfigure}

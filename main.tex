@@ -9,6 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[numbers]{natbib}
+\usepackage{caption}
 \usepackage{changepage}
 \usepackage{csvsimple}
 \usepackage{enumitem}
@@ -134,33 +135,39 @@
 
   \pagenumbering{roman}
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{ABSTRAK}
   \subimport{abstrak}{abstrak-id.tex}
   \cleardoublepage
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{ABSTRACT}
   \subimport{abstrak}{abstrak-en.tex}
   \cleardoublepage
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{KATA PENGANTAR}
   \subimport{lainnya}{kata-pengantar.tex}
   \cleardoublepage
 
   \renewcommand*\contentsname{DAFTAR ISI}
-  \addcontentsline{toc}{chapter}{\contentsname}
   \tableofcontents
+  \addcontentsline{toc}{chapter}{\contentsname}
   \cleardoublepage
 
   \renewcommand*\listfigurename{DAFTAR GAMBAR}
-  \addcontentsline{toc}{chapter}{\listfigurename}
   \listoffigures
+  \addcontentsline{toc}{chapter}{\listfigurename}
   \cleardoublepage
 
   \renewcommand*\lstlistlistingname{DAFTAR KODE}
-  \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \lstlistoflistings
+  \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \cleardoublepage
 
   \renewcommand*\listtablename{DAFTAR TABEL}
-  \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
+  \addcontentsline{toc}{chapter}{\listtablename}
   \cleardoublepage
 
   \pagenumbering{arabic}
@@ -181,9 +188,9 @@
   \cleardoublepage
 
   \renewcommand\bibname{DAFTAR PUSTAKA}
-  \addcontentsline{toc}{chapter}{\bibname}
   \bibliographystyle{IEEEtranN}
   \bibliography{pustaka/bibliografi.bib}
+  \addcontentsline{toc}{chapter}{\bibname}
   \cleardoublepage
 
 \end{document}
