@@ -1,6 +1,14 @@
 \subsection{Pengujian Citra \emph{Depth Camera} pada \emph{Real Robot}}
 \label{subsec:citradepthrobot}
 
+Sama seperti pada pengujian sebelumnya di bagian \ref{subsec:citradepthsimulasi},
+  pengujian citra \emph{depth camera} pada \emph{real robot} dilakukan dengan menjalankan dua buah \emph{image viewer node} untuk melihat hasil penerimaan data citra berwarna dan citra kedalaman.
+Hanya saja, sebagai ganti dari \emph{node} \lstinline{/depth_camera_plugin} yang ada di simulasi,
+  data citra berwarna dan citra kedalaman yang digunakan akan berasal dari \emph{Kinect2 node}.
+Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphdepthcamera},
+  \emph{node} \lstinline{/kinect2} akan mengirimkan \emph{topic} \lstinline{/kinect2/depth/image_raw} yang berisi citra kedalaman ke \emph{node} \lstinline{/image_viewer_2},
+  serta \emph{topic} \lstinline{/kinect2/image_raw} yang berisi citra berwarna ke \emph{node} \lstinline{/image_viewer_1}.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-depth-camera.png}
@@ -8,12 +16,21 @@
   \label{fig:rosgraphdepthcamera}
 \end{figure}
 
-% \textcolor{red}{\lipsum[1-2]}
+Hasilnya, kedua \emph{image viewer node} tersebut akan menampilkan citra yang dikirim oleh \emph{Kinect2 node}.
+Seperti yang dapat dilihat pada gambar \ref{fig:depthcamerarobot},
+  gambar pertama menampilkan citra dari ruang lab komputer secara berwarna,
+  sedangkan gambar kedua menampilkan citra dari ruang lab komputer secara hitam putih.
+Berbeda dengan hasil yang didapatkan di simulasi, pada pengujian ini,
+  citra kedalaman yang didapatkan memiliki hasil yang sangat terang.
+Hal ini terjadi karena pendeknya jangkauan yang dimiliki Kinect V2, yakni hanya sejauh 4.5 meter.
+Walaupun begitu, terlepas dari perbedaan hasil yang dijelaskan,
+  dapat diketahui bahwa pengujian yang ada di simulasi maupun pada \emph{real robot} dapat dilakukan dengan proses yang sama secara terabstrak,
+  sehingga \emph{topic} yang ada dapat digunakan oleh \emph{image viewer node} terlepas dari mana data yang dikirim melalui \emph{topic} tersebut berasal.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{gambar/citra-depth-camera-rgb-robot.png}
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{gambar/citra-depth-camera-depth-robot.png}
+  \includegraphics[width=0.4\textwidth,keepaspectratio]{gambar/citra-depth-camera-rgb-robot.png}
+  \includegraphics[width=0.4\textwidth,keepaspectratio]{gambar/citra-depth-camera-depth-robot.png}
   \caption{Perbandingan hasil tangkapan citra berwarna dan citra kedalaman pada \emph{real robot}.}
   \label{fig:depthcamerarobot}
 \end{figure}
