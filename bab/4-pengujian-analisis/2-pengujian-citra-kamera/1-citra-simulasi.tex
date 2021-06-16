@@ -1,5 +1,5 @@
-% \subsection{Pengujian Pengiriman Citra Kamera di Simulasi}
-% \label{subsec:citrasimulasi}
+\subsection{Pengujian Pengiriman Citra Kamera di Simulasi}
+\label{subsec:citrasimulasi}
 
 \begin{figure}[ht]
   \centering
@@ -8,10 +8,27 @@
   \label{fig:rosgraphcameraplugin}
 \end{figure}
 
-% \textcolor{red}{\lipsum[1]}
+Pengujian pengiriman citra kamera di simulasi dilakukan dengan cara menjalankan lingkungan \emph{indoor} pada simulator gazebo,
+  menjalankan \emph{image viewer node} untuk melihat hasil pengiriman gambar,
+  serta menjalankan \emph{command line} \lstinline{$ ros2 topic delay} dan \lstinline{$ ros2 topic hz} untuk mengukur \emph{delay} serta frekuensi dari data yang dikirim.
+Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphcameraplugin},
+  \emph{node} \lstinline{/camera_plugin} akan mengirimkan \emph{topic} \lstinline{/camera/image_raw} yang berisi citra kamera,
+  setelah itu \emph{node} \lstinline{/image_viewer} akan menerima citra tersebut dan menampilkannya dalam bentuk GUI.
+
+Pengujian ini dilakukan dengan berbagai macam konfigurasi resolusi citra yang dikirim.
+Hasil pengujian ini bisa dilihat pada tabel \ref{tb:pengirimancitrasimulasi}.
+Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang dikirimkan,
+  \emph{size} merupakan hasil perkalian resolusi dengan jumlah \emph{channel} (dalam hal ini 4 untuk citra RGBA),
+  \emph{delay} merupakan selang waktu yang dibutuhkan sebelum citra sampai ke penerima,
+  dan \emph{rate} merupakan frekuensi pengiriman citra.
 
 \input{tabel/pengiriman-citra-simulasi.tex}
 
-% \textcolor{red}{\lipsum[2]}
+Seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitrasimulasi},
+  dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa semakin besar ukuran data yang dikirimkan,
+  maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun.
+Pada pengujian ini, dapat diketahui agar \emph{delay} dan frekuensi yang dihasilkan stabil,
+  data yang dikirimkan hendaknya ada di bawah 1000 KB (dalam hal ini adalah citra dengan resolusi 640x480),
+  karena pada titik itu frekuensi yang dikirimkan tidak jauh berbeda dari frekuensi citra yang ditangkap oleh kamera yang ada di simulasi, yakni 30 FPS.
 
 \input{grafik/pengiriman-citra-simulasi.tex}
