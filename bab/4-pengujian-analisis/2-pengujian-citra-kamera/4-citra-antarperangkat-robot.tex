@@ -1,10 +1,28 @@
 \subsection{Pengujian Pengiriman Citra Kamera Antar-perangkat pada \emph{Real Robot}}
 \label{subsec:citraantarperangkatrobot}
 
-\textcolor{red}{\lipsum[1]}
+Pengujian pengiriman citra kamera antar-perangkat pada \emph{real robot} memiliki kesamaan proses dengan yang dilakukan di pengujian sebelumnya yang ada di bagian \ref{subsec:citraantarperangkatsimulasi},
+  dimana di pengujian ini, \emph{image viewer node} dan \emph{command line} \lstinline{$ ros2 topic} dijalankan di perangkat berbeda yang terhubung menggunakan jaringan \emph{ethernet} dengan perangkat yang menjalankan \emph{V4L2 camera node}.
+
+Sama seperti pengujian-pengujian sebelumnya,
+  pengujian ini juga dilakukan dengan berbagai macam konfigurasi resolusi citra yang dikirim.
+Hasil pengujian ini bisa dilihat pada tabel \ref{tb:pengirimancitraantarperangkatrobot}.
+Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang dikirimkan,
+  \emph{size} merupakan ukuran data yang dikirim,
+  \emph{delay} merupakan selang waktu yang dibutuhkan untuk sampai ke perangkat penerima,
+  dan \emph{rate} merupakan frekuensi pengiriman citra.
 
 \input{tabel/pengiriman-citra-antarperangkat-robot.tex}
 
-\textcolor{red}{\lipsum[2]}
-
 \input{grafik/pengiriman-citra-antarperangkat-robot.tex}
+
+Seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatrobot},
+  dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa semakin besar ukuran data yang dikirimkan,
+  maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun.
+Pada pengujian ini, dapat diketahui bahwa \emph{delay} yang dihasilkan cukup besar,
+  sekitar 100 ms, dan semakin naik dengan bertambahnya ukuran data yang dikirim.
+Sedangkan untuk frekuensi,
+  nilai yang dapat ditoleransi adalah ketika data yang dikirim berada di bawah 1000 KB,
+  diatas itu, frekuensi yang dikirimkan dapat turun drastis hingga 5 hz.
+Walaupun begitu, terlepas dari perbedaan \emph{delay} dan frekuensi yang dihasilkan antara pengujian di simulasi dan pada \emph{real robot},
+  dapat diketahui bahwa pengiriman data dari kedua sistem tersebut dapat diterima secara abstrak oleh program yang sama (\emph{image viewer node}) di perangkat manapun selama terkoneksi di dalam satu jaringan yang sama.
