@@ -5,7 +5,7 @@
 \emph{ROS 2 node} umumnya digunakan untuk merepresentasikan suatu proses tunggal yang ada pada robot,
   seperti untuk mengakses motor, mengolah gambar, dan sebagainya \citep{url:understandingros2nodes}.
 Setiap \emph{node} yang ada, nantinya dapat berkomunikasi dengan node lain melalui dua cara,
-  seperti yang terlihat pada Gambar \ref{fig:diagramnoderos2},
+  seperti yang terlihat pada gambar \ref{fig:diagramnoderos2},
   sebuah \emph{node} dengan \emph{publisher} dapat mengirimkan sebuah data melalui \emph{topic} yang nantinya akan disalurkan ke \emph{node} lain dengan \emph{subscriber} yang terhubung dengan \emph{topic} tersebut.
 Selain itu, sebuah \emph{node} dengan \emph{service client} juga dapat mengirimkan sebuah data \emph{request} melalui \emph{service} yang nantinya akan diolah dan dikirim balik dalam bentuk data \emph{response} oleh \emph{node} lain yang memiliki \emph{service server} yang terhubung dengan \emph{service} tersebut.
 
@@ -32,7 +32,7 @@ Selain \emph{topic} dan \emph{service},
   ROS 2 juga mengenal bentuk lain dari jalur komunikasi antar-\emph{node} yang disebut sebagai \emph{action}.
 \emph{Action} merupakan bentuk kompleks dari \emph{topic} dan \emph{service} dimana selain menerima data \emph{response},
   suatu \emph{node} juga dapat menerima data \emph{feedback} secara terus menerus sampai proses yang dijalankan selesai.
-Seperti yang terlihat pada Gambar \ref{fig:diagramactionros2},
+Seperti yang terlihat pada gambar \ref{fig:diagramactionros2},
   suatu \emph{node} dengan \emph{action client} akan mengirimkan data \emph{goal service} melalui sebuah \emph{action} kepada \emph{node} lain dengan \emph{action server} yang terhubung kepada \emph{action} tersebut.
 Nantinya, selama proses yang dilakukan oleh \emph{node} dengan \emph{action server} belum selesai,
   \emph{node} tersebut dapat mengirimkan data \emph{feedback topic} kepada \emph{node} dengan \emph{action client}.
