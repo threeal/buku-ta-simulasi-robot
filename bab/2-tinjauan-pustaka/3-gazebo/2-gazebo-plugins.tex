@@ -1,4 +1,19 @@
-\subsection{Gazebo Plugins}
-\label{subsec:gazeboplugins}
+\subsection{\emph{Gazebo Plugin}}
+\label{subsec:gazeboplugin}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Gazebo plugin} merupakan bagian dari simulator Gazebo yang memungkinkan dibuatnya program yang dapat memperoleh data maupun memanipulasi sistem yang ada di lingkungan simulasi \citep{url:gazeboplugin}.
+\emph{Plugin} tersebut dapat dibuat menggunakan bahasa pemrograman C++ yang nantinya akan dikompilasi menjadi sebuah \emph{shared library} yang dapat diintegrasikan secara langsung pada simulator Gazebo.
+
+\lstinputlisting[
+  language=XML,
+  style=code,
+  caption={Contoh model \emph{plugin}.},
+  label={lst:contohmodelplugin}
+]{kode/plugin/plugin_example.cpp}
+
+\emph{Gazebo plugin} terbagi menjadi beberapa jenis plugin,
+  yakni \emph{world plugin}, \emph{model plugin}, \emph{sensor plugin}, \emph{system plugin}, \emph{visual plugin}, dan \emph{GUI plugin}.
+Sebagai contoh seperti pada potongan kode \ref{lst:contohmodelplugin},
+  sebuah \emph{plugin} dibuat dari sebuah \emph{class} yang diturunkan dari \emph{class} \lstinline{ModelPlugin}.
+Agar bisa digunakan sebagai \emph{plugin} pada simulator Gazebo,
+  \emph{class} yang dibuat nantinya perlu diregistrasi menggunakan \emph{macro} \lstinline{GZ_REGISTER_WORLD_PLUGIN}.
