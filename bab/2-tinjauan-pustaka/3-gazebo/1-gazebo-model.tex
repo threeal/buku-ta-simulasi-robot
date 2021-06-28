@@ -1,4 +1,20 @@
-\subsection{Gazebo Model}
+\subsection{\emph{Gazebo Model}}
 \label{subsec:gazebomodel}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Gazebo model} merupakan bagian dari simulator Gazebo yang merepresentasikan objek yang ada di lingkungan simulasi seperti robot, pengguna, ruangan, meja, kursi, dan lain sebagainya.
+Selain \emph{Gazebo Model}, dikenal juga istilah \emph{Gazebo World} yang merepresentasikan keseluruhan lingkungan simulasi beserta model-model yang ada di dalamnya.
+
+\lstinputlisting[
+  language=XML,
+  style=code,
+  caption={Contoh \emph{file} SDFormat yang mendeskripsikan komponen dari suatu model.},
+  label={lst:modelsdfexample}
+]{kode/sdf/model_example.xml}
+
+\emph{Gazebo Model} dibentuk dari sebuah \emph{file} SDFormat,
+  yang merupakan sebuah format berbasis XML untuk mendeskripsikan setiap komponen yang ada pada objek di lingkungan simulasi.
+Pada Gazebo, SDFormat menggantikan format URDF yang digunakan untuk mendeskripsikan robot yang ada pada ROS.
+Untuk mendeskripsikan sebuah model,
+  seperti yang terlihat pada potongan kode \ref{lst:modelsdfexample},
+  model dari suatu objek akan terbagi menjadi beberapa \emph{link},
+  yang mana pada setiap \emph{link} akan memiliki nilai inertia, massa, bentuk \emph{collision}, serta tampilan visual yang digunakan untuk mensimulasikan objek tersebut secara virtual.
