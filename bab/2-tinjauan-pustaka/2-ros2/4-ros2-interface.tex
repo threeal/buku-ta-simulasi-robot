@@ -13,6 +13,13 @@ Seperti pada potongan kode \ref{lst:msgexample},
 Sebuah \emph{interface} yang ada di ROS 2 bisa memiliki tipe data yang berasal dari \emph{interface} lain,
   sehingga memungkinkan bentuk \emph{interface} yang lebih kompleks seperti yang digunakan pada \emph{interface} untuk informasi kamera dan data citra.
 
+\begin{sidewaysfigure}
+  \centering
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{gambar/diagram-interface-ros2.png}
+  \caption{Diagram abstraksi interface yang ada pada ROS 2 \citep{url:ros2interfacesconcept}.}
+  \label{fig:diagraminterfaceros2}
+\end{sidewaysfigure}
+
 \lstinputlisting[
   style=code,
   caption={Contoh \emph{file msg} yang mendeskripsikan \emph{interface} untuk \emph{topic}.},
@@ -26,10 +33,3 @@ Seperti yang terlihat pada gambar \ref{fig:diagraminterfaceros2},
   serta akan dikompilasi menjadi \emph{struct} dan \emph{class} dari bahasa yang digunakan sebagai implementasi dari \emph{RCL}.
 Dengan adanya kompilasi ini,
   isi dari sebuah pesan yang dikirim maupun diterima pada ROS 2 dapat dideskripsikan menggunakan satu format yang nantinya bisa digunakan di semua implementasi RMW maupun RCL.
-
-\begin{sidewaysfigure}
-  \centering
-  \includegraphics[width=0.8\textwidth,keepaspectratio]{gambar/diagram-interface-ros2.png}
-  \caption{Diagram abstraksi interface yang ada pada ROS 2 \citep{url:ros2interfacesconcept}.}
-  \label{fig:diagraminterfaceros2}
-\end{sidewaysfigure}
