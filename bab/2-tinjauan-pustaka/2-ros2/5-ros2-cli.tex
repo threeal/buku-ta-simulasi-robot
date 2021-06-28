@@ -1,0 +1,17 @@
+\subsection{\emph{ROS 2 Command-line Interface}}
+\label{subsec:ros2cli}
+
+\emph{ROS 2 CLI} (\emph{command-line interface}) merupakan sekumpulan \emph{tools} dalam bentuk \emph{command-line} yang digunakan untuk membantu \emph{debugging} pada komunikasi antar-\emph{node} yang ada pada ROS 2.
+\emph{Tools} ini terdiri dari beberapa perintah yang dapat digunakan untuk melakukan berbagai macam hal dari melihat daftar \emph{node} yang ada pada sistem,
+  isi dari data yang dikirim melalui suatu \emph{topic},
+  daftar parameter yang dapat dilihat dan diubah,
+  dan lain sebagainya.
+
+Secara sistem, \emph{ROS 2 CLI} terbentuk sebagai \emph{ROS 2 packages} yang ditulis menggunakan bahasa pemrograman Python.
+Agar dapat bekerja untuk mengetahui berbagai \emph{node}, \emph{topic}, maupun \emph{service} yang ada,
+  \emph{ROS 2 CLI} menggunakan \emph{distributed discovery process} \citep{url:ros2cliintrospection}.
+Berbeda dengan ROS sebelumnya yang bekerja secara terpusat menggunakan \emph{ROS Master},
+  sistem ini bekerja lebih baik karena tidak terpusat,
+  namun membutuhkan waktu yang lebih lama untuk melakukan proses pencarian \emph{node}, \emph{topic} maupun \emph{service} yang ada.
+Oleh karena itu, untuk mempercepat proses pencarian,
+  maka akan ada \emph{daemon} yang bekerja secara terus menerus dan menyimpan \emph{cache} dari struktur \emph{graph} yang ada.

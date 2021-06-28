@@ -13,7 +13,7 @@ Pada ROS, \emph{hardware abstraction} tersebut terbentuk dengan menggunakan \emp
 Nantinya, Setiap node yang ada dapat menerima maupun mengirimkan data melalui \emph{topic} tersebut,
 	terlepas dari bagaimana maupun darimana data yang dikirimkan tersebut berasal.
 
-Pada ROS terdapat berbagai macam \emph{tools} yang sudah tersedia untuk membantu pengembangan sistem yang ada pada robot seperti \emph{command line} yang membantu dalam \emph{debugging} program,
+Pada ROS terdapat berbagai macam \emph{tools} yang sudah tersedia untuk membantu pengembangan sistem yang ada pada robot seperti \emph{command-line} yang membantu dalam \emph{debugging} program,
 	konfigurasi parameter secara dinamis ketika program sedang dijalankan,
 	\emph{monitoring} data internal yang ada pada robot secara visual,
 	dan lain sebagainya.
@@ -28,19 +28,10 @@ Berbeda dengan pendahulunya yang menggunakan TCPROS/UDPROS sebagai sistem komuni
 Dengan penggunaan DDS tersebut, ROS 2 akan lebih terfokus pada penggunaan \emph{middleware} di bidang robotika,
 	sedangkan komunikasi tingkat rendah yang dilakukan diantara setiap \emph{node} akan dikembalikan kepada implementasi DDS yang digunakan.
 
-% \begin{figure}[ht]
-%   \centering
-% 	\includegraphics[scale=0.4]{gambar/komunikasi-ros.png}
-% 	\caption{Diagram komunikasi antar node pada ROS 2 \citep{url:ros2nodes}.}
-% 	\label{fig:komunikasiros}
-% \end{figure}
-
-\subimport{2-ros2}{1-rmw.tex}
-\subimport{2-ros2}{2-rcl.tex}
-\subimport{2-ros2}{3-ros2-interface.tex}
-% \subimport{2-ros2}{4-ros2-node.tex}
-% \subimport{2-ros2}{5-ros2-topic.tex}
-% \subimport{2-ros2}{6-ros2-service.tex}
-% \subimport{2-ros2}{7-ros2-cli.tex}
-% \subimport{2-ros2}{8-rqt.tex}
-% \subimport{2-ros2}{9-rviz2.tex}
+\subimport{2-ros2}{1-ros2-node.tex}
+\subimport{2-ros2}{2-rmw.tex}
+\subimport{2-ros2}{3-rcl.tex}
+\subimport{2-ros2}{4-ros2-interface.tex}
+\subimport{2-ros2}{5-ros2-cli.tex}
+\subimport{2-ros2}{6-rqt.tex}
+% \subimport{2-ros2}{7-rviz2.tex}
