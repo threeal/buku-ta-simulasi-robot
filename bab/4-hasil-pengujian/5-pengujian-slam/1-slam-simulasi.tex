@@ -1,17 +1,17 @@
 \subsection{Pengujian Pemetaan Ruangan di Simulasi}
 \label{subsec:slamsimulasi}
 
-Pengujian pemetaan ruangan di simulasi dilakukan dengan cara menjalankan ruangan \emph{indoor} pada simulator Gazebo dan menjalankan \emph{RTAB-Map node} yang melakukan pemetaan ruangan dari data yang dikirimkan model robot yang ada di simulasi.
-Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphslamsimulation},
-  \emph{node} \lstinline{/depth_camera_plugin} akan mengirimkan data \emph{depth camera} melalui tiga buah \emph{topic} ke \emph{node} \lstinline{/rtabmap},
-  sedangkan \emph{node} \lstinline{/navigation_plugin} akan mengirimkan data melalui \emph{topic} \lstinline{/odom} ke \emph{node} \lstinline{/rtabmap}.
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-slam-simulation.png}
   \caption{Relasi antar-\emph{node} dari pengujian pemetaan ruangan di simulasi.}
   \label{fig:rosgraphslamsimulation}
 \end{figure}
+
+Pengujian pemetaan ruangan di simulasi dilakukan dengan cara menjalankan ruangan \emph{indoor} pada simulator Gazebo dan menjalankan \emph{RTAB-Map node} yang melakukan pemetaan ruangan dari data yang dikirimkan model robot yang ada di simulasi.
+Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphslamsimulation},
+  \emph{node} \lstinline{/depth_camera_plugin} akan mengirimkan data \emph{depth camera} melalui tiga buah \emph{topic} ke \emph{node} \lstinline{/rtabmap},
+  sedangkan \emph{node} \lstinline{/navigation_plugin} akan mengirimkan data melalui \emph{topic} \lstinline{/odom} ke \emph{node} \lstinline{/rtabmap}.
 
 \emph{RTAB-Map node} kemudian akan memproses keseluruhan data yang didapat dari komponen \emph{depth camera} dan navigasi untuk melakukan pemetaan pada ruangan yang ada di simulasi.
 Seperti yang dapat dilihat pada gambar \ref{fig:hasilpemetaan},
