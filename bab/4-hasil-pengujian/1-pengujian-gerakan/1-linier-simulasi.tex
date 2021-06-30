@@ -1,14 +1,14 @@
-\subsection{Pengujian Gerakan Linier dan Estimasi Posisi di Simulasi}
+\subsection{Pengujian Gerakan Linier dan Estimasi Posisi pada Robot di Simulasi}
 \label{subsec:liniersimulasi}
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-navigation-plugin.png}
-  \caption{Relasi antar-\emph{node} dari pengujian gerakan linier dan estimasi posisi di simulasi.}
+  \caption{Relasi antar-\emph{node} dari pengujian gerakan linier dan estimasi posisi pada robot di simulasi.}
   \label{fig:rosgraphnavigationplugin}
 \end{figure}
 
-Pengujian gerakan linear dan estimasi posisi di simulasi dilakukan dengan cara menjalankan lingkungan \emph{outdoor} pada simulator Gazebo,
+Pengujian gerakan linear dan estimasi posisi pada robot di simulasi dilakukan dengan cara menjalankan lingkungan \emph{outdoor} pada simulator Gazebo,
   menjalankan \emph{move for node} sebagai \emph{behavior node} dari pengujian,
   dan menjalankan \emph{odometry echo node} untuk menampilkan hasil estimasi posisi dari kalkulasi odometri robot.
 Seperti yang terlihat pada gambar \ref{fig:rosgraphnavigationplugin},
@@ -27,6 +27,6 @@ Pada tabel tersebut, nilai yang ada di kolom \emph{speed} adalah besar kecepatan
 Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa gerakan yang diperintahkan kepada robot cenderung menghasilkan posisi robot yang sesuai dengan posisi perkiraan (\emph{estimated position}).
 Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
   seperti yang terlihat pada gambar \ref{fig:grafikgerakanliniersimulasi},
-  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai dengan yang diharapkan (\emph{expected}) walaupun dengan \emph{error} jarak yang relatif tidak kecil (kurang lebih 1-2 meter).
+  hasil yang didapatkan cenderung memiliki arah positif negatif yang sesuai dengan yang diharapkan (\emph{expected}) dan \emph{error} jarak yang relatif kecil (kurang lebih 10 sentimeter).
 
 \input{grafik/gerakan-linier-simulasi.tex}

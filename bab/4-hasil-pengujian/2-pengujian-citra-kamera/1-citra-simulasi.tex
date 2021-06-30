@@ -1,4 +1,4 @@
-\subsection{Pengujian Pengiriman Citra Kamera di Simulasi}
+\subsection{Pengujian Pengiriman Citra Kamera pada Robot di Simulasi}
 \label{subsec:citrasimulasi}
 
 \begin{figure}[ht]
@@ -8,10 +8,10 @@
   \label{fig:rosgraphcameraplugin}
 \end{figure}
 
-Pengujian pengiriman citra kamera di simulasi dilakukan dengan cara menjalankan lingkungan \emph{indoor} pada simulator gazebo,
+Pengujian pengiriman citra kamera pada robot di simulasi dilakukan dengan cara menjalankan lingkungan \emph{indoor} pada simulator gazebo,
   menjalankan \emph{image viewer node} untuk melihat hasil pengiriman gambar,
   serta menjalankan \emph{command-line} \lstinline{$ ros2 topic delay} dan \lstinline{$ ros2 topic hz} untuk mengukur \emph{delay} serta frekuensi dari data yang dikirim.
-Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphcameraplugin},
+Seperti yang terlihat pada gambar \ref{fig:rosgraphcameraplugin},
   \emph{node} \lstinline{/camera_plugin} akan mengirimkan \emph{topic} \lstinline{/camera/image_raw} yang berisi citra kamera,
   setelah itu \emph{node} \lstinline{/image_viewer} akan menerima citra tersebut dan menampilkannya dalam bentuk GUI.
 

@@ -16,7 +16,7 @@
         bar width=5pt,
         ybar=0pt,
         xmin=0,
-        xmax=9,
+        xmax=7,
       ]
       \addplot table[x=index,y=expected,col sep=comma]{data/gerakan_putar_simulasi.csv};
       \addplot table[x=index,y=measured,col sep=comma]{data/gerakan_putar_simulasi.csv};
@@ -24,6 +24,6 @@
       \legend{Expected,Measured,Odometry}
     \end{axis}
   \end{tikzpicture}
-  \caption{Grafik estimasi orientasi dari gerakan putar di simulasi.}
+  \caption{Grafik estimasi orientasi dari gerakan putar pada robot di simulasi.}
   \label{fig:grafikgerakanputarsimulasi}
 \end{figure}
