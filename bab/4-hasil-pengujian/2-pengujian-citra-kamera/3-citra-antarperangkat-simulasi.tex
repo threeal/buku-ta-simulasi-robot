@@ -1,9 +1,11 @@
-\subsection{Pengujian Pengiriman Citra Kamera Antar-perangkat di Simulasi}
+\subsection{Pengujian Pengiriman Citra Kamera Antar-perangkat pada Robot di Simulasi}
 \label{subsec:citraantarperangkatsimulasi}
 
-Pengujian pengiriman citra kamera antar-perangkat di simulasi memiliki kesamaan proses dengan yang dilakukan di pengujian pada sesama perangkat yang ada di bagian \ref{subsec:citrasimulasi}.
+Pengujian pengiriman citra kamera antar-perangkat pada robot di simulasi memiliki kesamaan proses dengan yang dilakukan di pengujian pada sesama perangkat yang ada di bagian \ref{subsec:citrasimulasi}.
 Hanya saja, di pengujian ini, \emph{image viewer node} dan \emph{command-line} \lstinline{$ ros2 topic} dijalankan di perangkat berbeda yang terhubung dengan perangkat yang menjalankan lingkungan simulasi menggunakan jaringan \emph{ethernet}.
 Perangkat lain yang digunakan di pengujian ini adalah sebuah komputer Intel NUC dengan spesifikasi yang sama seperti yang dimiliki prototipe robot di tabel \ref{tb:spesifikasikomputerrobot}.
+
+\input{tabel/pengiriman-citra-antarperangkat-simulasi.tex}
 
 Sama seperti pengujian pada sesama perangkat,
   pengujian ini juga dilakukan dengan berbagai macam konfigurasi resolusi citra yang dikirim.
@@ -16,9 +18,7 @@ Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang
 Seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatsimulasi},
   dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa semakin besar ukuran data yang dikirimkan,
   maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun.
-Pada pengujian ini, dapat diketahui bahwa \emph{delay} dan frekuensi yang dihasilkan cenderung stabil ketika ukuran data yang dikirim ada di bawah 1500 KB,
+Pada pengujian ini, dapat diketahui bahwa frekuensi yang dihasilkan cenderung stabil ketika ukuran data yang dikirim ada di bawah 3000 KB,
   namun mengalami perubahan yang sangat signifikan ketika ukuran data yang dikirim ada di atas nilai tersebut.
-
-\input{tabel/pengiriman-citra-antarperangkat-simulasi.tex}
 
 \input{grafik/pengiriman-citra-antarperangkat-simulasi.tex}
