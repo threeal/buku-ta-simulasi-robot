@@ -1,17 +1,17 @@
 \subsection{\emph{Navigation Plugin}}
 \label{subsec:navigationplugin}
 
+\emph{Navigation plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen navigasi di simulasi.
+\emph{Plugin} ini ditulis dalam bahasa C++ dan dibuat menjadi \emph{class} dengan nama \lstinline{dienen_gazebo_plugins::NavigationPlugin}.
+Seperti yang terlihat pada potongan kode \ref{lst:navigationplugin},
+  \emph{class} ini dibuat dengan menurunkan \emph{class} \lstinline{gazebo::ModelPlugin} sebagai \emph{parent class} dari \emph{class} ini sehingga memungkinkan \emph{class} ini untuk mengakses maupun memanipulasi data yang ada pada \emph{Gazebo model}.
+
 \lstinputlisting[
   language=C++,
   style=code,
   caption={\emph{Class} dari \emph{navigation plugin}.},
   label={lst:navigationplugin}
 ]{kode/plugin/navigation_plugin.cpp}
-
-\emph{Navigation plugin} merupakan \emph{Gazebo plugin} yang digunakan untuk mengabstraksi komponen navigasi di simulasi.
-\emph{Plugin} ini ditulis dalam bahasa C++ dan dibuat menjadi \emph{class} dengan nama \lstinline{dienen_gazebo_plugins::NavigationPlugin}.
-Seperti yang terlihat pada potongan kode \ref{lst:navigationplugin},
-  \emph{class} ini dibuat dengan menurunkan \emph{class} \lstinline{gazebo::ModelPlugin} sebagai \emph{parent class} dari \emph{class} ini sehingga memungkinkan \emph{class} ini untuk mengakses maupun memanipulasi data yang ada pada \emph{Gazebo model}.
 
 \emph{Plugin} ini digunakan untuk mengirimkan estimasi posisi dan orientasi dari robot sebagai odometri melalui \emph{topic} \lstinline{/odom} dan menerima masukan kecepatan (\emph{twist}) melalui \emph{topic} \lstinline{/cmd_vel}.
 Odometri yang dikirimkan didapatkan dari posisi dan orientasi mutlak dari model robot yang ada di simulasi,
