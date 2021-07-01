@@ -1,4 +1,19 @@
-\subsection{Patrol Position Node}
+\subsection{\emph{Patrol Position Node}}
 \label{subsec:patrolpositionnode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Patrol position node} merupakan \emph{behavior node} yang digunakan untuk memberikan perintah pada robot untuk bergerak menuju setiap posisi yang ditentukan sampai posisi terakhir.
+\emph{Node} ini ditulis dalam bahasa pemrograman C++ dan akan menerima data odometri melalui \emph{topic} \lstinline{/odom},
+  kemudian memproses target kecepatan yang diperlukan,
+  dan mengirimnya melalui \emph{topic} \lstinline{/cmd_vel}.
+
+\lstinputlisting[
+  language=C++,
+  style=code,
+  caption={Program \emph{patrol position node}.},
+  label={lst:patrolpositionnode}
+]{kode/node/patrol_position_node.cpp}
+
+Seperti yang terlihat pada potongan kode \ref{lst:patrolpositionnode},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 pada program yang ditulis menggunakan bahasa pemrograman C++.
+\emph{Node} ini memiliki sebuah \emph{odometry subscription} untuk menerima data odometri pada \emph{topic} \lstinline{/odom} dan sebuah \emph{twist publisher} yang akan mengirimkan data perintah kecepatan gerak pada \emph{topic} \lstinline{/cmd_vel}.
+Kemudian proses dari \emph{node} ini akan dilakukan secara terus menerus sampai posisi terakhir tercapai melalui \emph{callback} yang diberikan pada \emph{update timer}.
