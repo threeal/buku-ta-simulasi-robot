@@ -1,4 +1,19 @@
-\subsection{Move For Node}
+\subsection{\emph{Move For Node}}
 \label{subsec:movefornode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Move for node} merupakan \emph{behavior node} yang digunakan untuk memberikan perintah gerakan linier dan gerakan putar selama kurun waktu yang ditentukan.
+\emph{Node} ini ditulis dalam bahasa pemrograman C++ dan akan mengirimkan data gerakan kecepatan pada topic \lstinline{/cmd_vel} secara terus menerus hingga durasi waktu yang ditentukan sudah terpenuhi.
+
+\lstinputlisting[
+  language=C++,
+  style=code,
+  caption={Program \emph{move for node}.},
+  label={lst:movefornode}
+]{kode/node/move_for_node.cpp}
+
+Seperti yang terlihat pada potongan kode \ref{lst:movefornode},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 pada program yang ditulis menggunakan bahasa pemrograman C++.
+\emph{Node} ini memiliki sebuah \emph{twist publisher} yang akan mengirimkan data perintah kecepatan gerak pada \emph{topic} \lstinline{/cmd_vel}.
+Agar durasi proses bisa tersinkronisasi dengan waktu yang ada di simulasi,
+  \emph{node} ini akan diproses sesuai dengan \emph{clock topic} yang diterima dari simulasi.
+Selain itu, \emph{node} ini akan diproses sesuai dengan \emph{update timer} yang dimiliki \emph{node} tersebut.

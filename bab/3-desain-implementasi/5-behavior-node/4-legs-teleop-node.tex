@@ -1,0 +1,18 @@
+\subsection{\emph{Legs Teleop Node}}
+\label{subsec:legsteleopnode}
+
+\emph{Legs teleop node} merupakan \emph{behavior node} yang digunakan untuk memungkinkan teleoperasi dari model pengguna yang ada di simulasi untuk mengubah posisi, orientasi, serta pose kaki dari model pengguna.
+\emph{Node} ini merupakan implementasi dari \emph{dummy node} untuk data yang berasal dari \emph{smart assistive posture device} seperti yang terlihat pada gambar \ref{fig:integrasipluginpengguna}.
+
+\lstinputlisting[
+  language=C++,
+  style=code,
+  caption={Program \emph{legs teleop node}.},
+  label={lst:legsteleopnode}
+]{kode/node/legs_teleop_node.cpp}
+
+\emph{Node} ini ditulis dalam bahasa pemrograman C++ dan akan mengirimkan data \emph{dummy} dari posisi, orientasi, serta pose kaki pengguna.
+Seperti yang terlihat pada potongan kode \ref{lst:legsteleopnode},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 pada program yang ditulis menggunakan bahasa pemrograman C++.
+\emph{Node} ini menggunakan \emph{legs provider} yang merupakan objek \emph{class} yang berisi berbagai macam \emph{publisher} untuk mengirimkan data yang berasal dari \emph{smart assistive posture device}.
+Proses teleoperasi pada program ini sendiri dilakukan pada \emph{update timer} yang nantinya akan memproses input \emph{keyboard} dari pengguna dan mengubah data yang dikirimkan sesuai dengan nilai input tersebut.
