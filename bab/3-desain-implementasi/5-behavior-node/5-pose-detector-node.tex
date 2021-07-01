@@ -1,4 +1,19 @@
 \subsection{\emph{Pose Detector Node}}
 \label{subsec:posedetectornode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Pose detector node} merupakan \emph{behavior node} yang digunakan untuk mendeteksi pose tubuh dari citra pengguna yang diterima menggunakan metode BlazePose \citep{cit:bazarevsky2020}.
+\emph{Node} ini ditulis dalam bahasa pemrograman Python dan akan menerima data citra melalui \emph{topic} yang ditentukan,
+  kemudian memproses dan mendeteksi data yang diterima,
+  dan terakhir menampilkan hasilnya dalam bentuk GUI.
+
+\lstinputlisting[
+  language=Python,
+  style=code,
+  caption={Program \emph{pose detector node}.},
+  label={lst:posedetectornode}
+]{kode/node/pose_detector_node.py}
+
+Seperti yang terlihat pada potongan kode \ref{lst:posedetectornode},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclpy} untuk mengakses sistem komunikasi ROS 2 pada program yang ditulis menggunakan bahasa pemrograman Python.
+\emph{Node} ini memiliki sebuah \emph{image subscription} dan sebuah fungsi \emph{image callback} yang digunakan untuk menerima data citra.
+Pada fungsi tersebut, \emph{node} ini akan memproses data citra yang diterima dan mendeteksi pose tubuh pengguna menggunakan objek \lstinline{mp.solutions.pose.Pose} yang berasal dari \emph{library} MediaPipe \citep{cit:lugaresi2019}.
