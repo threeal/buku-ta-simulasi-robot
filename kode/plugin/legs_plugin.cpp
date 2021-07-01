@@ -7,6 +7,8 @@
 namespace beine_gazebo_plugins
 {
 
+...
+
 class LegsPlugin : public gazebo::ModelPlugin
 {
 public:

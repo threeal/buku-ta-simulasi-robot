@@ -8,10 +8,11 @@ Penyusunan SDFormat dilakukan dengan memisahkan bagian yang dapat bergerak secar
 Untuk setiap \emph{link element} yang ada,
   beberapa \emph{element} lain perlu ditambahkan ke \emph{element} tersebut sehingga model yang dibuat bisa digunakan di simulasi.
 Seperti yang terlihat pada potongan kode \ref{lst:headlink},
-  setiap \emph{link element} perlu memiliki \emph{pose element} untuk menentukan posisi dari bagian robot yang diukur dari titik pusat robot,
-  \emph{inertial element} untuk menentukan berat dari bagian robot,
-  \emph{collision element} untuk menentukan \emph{bounding box} yang digunakan oleh bagian robot,
-  dan \emph{visual element} yang digunakan untuk menentukan tampilan dari bagian robot tersebut.
+  setiap \emph{link element} yang dibuat akan terdiri dari beberapa \emph{element} lain.
+\emph{Element} tersebut dapat terdiri atas \emph{pose element} yang digunakan untuk menentukan posisi serta orientasi dari bagian robot yang diukur dari titik pusat robot,
+  \emph{inertial element} yang digunakan untuk menentukan inersia dan massa dari bagian robot,
+  \emph{collision element} yang berisi \emph{geometry element} yang digunakan untuk menentukan \emph{bounding box} yang digunakan untuk perhitungan \emph{physics} dari bagian robot,
+  dan terakhir \emph{visual element} yang digunakan untuk menentukan tampilan dari bagian robot melalui proses \emph{rendering}.
 
 \lstinputlisting[
   language=XML,
@@ -30,13 +31,6 @@ Seperti yang terlihat pada potongan kode \ref{lst:leftshoulderjoint} dan \ref{ls
 \lstinputlisting[
   language=XML,
   style=code,
-  caption={\emph{Joint element} yang menghubungkan bagian badan atas dan bagian badan bawah robot.},
-  label={lst:upperbodyjoint}
-]{kode/sdf/robot_model/upper_body_joint.xml}
-
-\lstinputlisting[
-  language=XML,
-  style=code,
   caption={\emph{Joint element} yang menghubungkan bagian pundak kiri dan bagian badan atas robot.},
   label={lst:leftshoulderjoint}
 ]{kode/sdf/robot_model/left_shoulder_joint.xml}
@@ -44,11 +38,11 @@ Seperti yang terlihat pada potongan kode \ref{lst:leftshoulderjoint} dan \ref{ls
 \lstinputlisting[
   language=XML,
   style=code,
-  caption={\emph{Sensor element} dari sensor kamera.},
-  label={lst:camerasensor}
-]{kode/sdf/robot_model/camera_sensor.xml}
+  caption={\emph{Joint element} yang menghubungkan bagian badan atas dan bagian badan bawah robot.},
+  label={lst:upperbodyjoint}
+]{kode/sdf/robot_model/upper_body_joint.xml}
 
-Terakhir, penyusunan SDFormat dilakukan dengan menambahkan sensor kamera dan \emph{depth camera} yang digunakan pada robot.
+Terakhir, penyusunan SDFormat dilakukan melalui penambahan sensor kamera dan \emph{depth camera} yang digunakan pada robot.
 Sensor tersebut ditambahkan dengan menyematkan \emph{sensor element} pada \emph{link element} dari masing-masing bagian kamera dan \emph{depth camera}.
 Seperti yang terlihat pada potongan kode \ref{lst:camerasensor} dan \ref{lst:depthcamerasensor},
   sensor kamera dan \emph{depth camera} memiliki jumlah dan jenis \emph{child element} yang sama,
@@ -56,6 +50,13 @@ Seperti yang terlihat pada potongan kode \ref{lst:camerasensor} dan \ref{lst:dep
   Pada kamera, \emph{sensor element} yang digunakan memiliki \emph{type attribute} bernilai \emph{camera},
   sedangkan pada \emph{depth camera}, \emph{sensor element} yang digunakan memiliki \emph{type attribute} bernilai \emph{depth}.
   Sisanya, nilai setiap \emph{element} yang ada di kedua sensor tersebut didapatkan dari spesifikasi kamera dan \emph{depth camera} yang digunakan di prototipe robot seperti yang dijelaskan di bagian \ref{subsec:prototiperobotdienen}.
+
+\lstinputlisting[
+  language=XML,
+  style=code,
+  caption={\emph{Sensor element} dari sensor kamera.},
+  label={lst:camerasensor}
+]{kode/sdf/robot_model/camera_sensor.xml}
 
 \lstinputlisting[
   language=XML,
