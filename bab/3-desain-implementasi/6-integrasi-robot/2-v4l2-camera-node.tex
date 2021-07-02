@@ -1,4 +1,12 @@
-\subsection{V4L2 Camera Node}
+\subsection{\emph{V4L2 Camera Node}}
 \label{subsec:v4l2cameranode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{V4L2 camera node} merupakan \emph{node} yang digunakan untuk mengakses komponen kamera yang dapat disambungkan pada komputer robot \emph{dienen} menggunakan sambungan USB.
+\emph{Node} yang digunakan ini berasal dari \emph{package} \lstinline{v4l2_camera},
+  sebuah \emph{ROS 2 package} yang memungkinkan akses kamera menggunakan sistem komunikasi yang ada pada ROS 2.
+\emph{Package} tersebut menggunakan API Video4Linux (V4L) \citep{url:video4linux} untuk memungkinkan akses kamera pada perangkat Linux.
+
+\emph{Node} ini dapat dikonfigurasi secara dinamis ketika \emph{node} sedang dijalankan,
+  sehingga konfigurasi parameter seperti \emph{device port} kamera, ukuran citra, dan lain sebagainya dapat dilakukan tanpa perlu menjalankan ulang \emph{node} yang sudah dijalankan.
+Ketika \emph{node} ini terkoneksi dengan perangkat kamera,
+  \emph{node} ini secara terus-menerus akan mengirimkan data citra melalui \emph{topic} \lstinline{/image_raw} dan data informasi kamera melalui \emph{topic} \lstinline{/camera_info}.
