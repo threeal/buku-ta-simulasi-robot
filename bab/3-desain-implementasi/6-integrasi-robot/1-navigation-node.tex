@@ -1,4 +1,19 @@
-\subsection{Navigation Node}
+\subsection{\emph{Navigation Node}}
 \label{subsec:navigationnode}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Navigation node} merupakan \emph{node} yang digunakan untuk mengakses komponen navigasi yang ada pada robot \emph{Dienen}.
+\emph{Node} ini akan berkomunikasi dengan \emph{controller} robot berbasis STM32F4 melalui sambungan \emph{ethernet} dan menggunakan protokol UDP.
+\emph{Node} ini ditulis dalam bahasa pemrograman C++ dan akan menerima data perintah kecepatan melalui \emph{topic} \lstinline{/cmd_vel} untuk kemudian diteruskan ke \emph{controller} robot,
+  serta menerima data odometri dari \emph{controller} robot untuk kemudian diteruskan melalui \emph{topic} \lstinline{/odom}.
+
+\lstinputlisting[
+  language=C++,
+  style=code,
+  caption={\emph{Class} dari \emph{navigation node}.},
+  label={lst:navigationnode}
+]{kode/node/navigation_node.cpp}
+
+Seperti yang terlihat pada potongan kode \ref{lst:navigationnode},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 pada program yang ditulis menggunakan bahasa pemrograman C++.
+\emph{Node} ini memiliki sebuah \emph{twist subscription} yang akan menerima data perintah kecepatan gerak melalui \emph{topic} \lstinline{/cmd_vel} dan sebuah \emph{odometry publisher} yang akan mengirim data odometri melalui \emph{topic} \lstinline{/odom}.
+Bagian utama dari \emph{node} ini terletak pada \emph{update timer} yang nantinya akan memanggil fungsi \lstinline{listen_process()} serta \lstinline{broadcast_process()} secara terus menerus untuk bertukar data dengan \emph{controller} robot menggunakan protokol UDP.
