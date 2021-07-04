@@ -1,7 +1,17 @@
 \section{\emph{Depth Camera}}
 \label{sec:depthcamera}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Depth camera} merupakan salah satu jenis kamera yang dapat digunakan untuk menghasilkan citra dua dimensi yang menampilkan jarak suatu titik dari pusat kamera.
+Terdapat berbagai metode yang dapat digunakan untuk menghasilkan citra kedalaman (\emph{depth image}) dari sebuah \emph{depth camera},
+  salah satunya adalah dengan menangkap pantulan cahaya menggunakan sistem \emph{time-of-flight} \citep{cit:idan2001}.
+Pada sistem tersebut sebuah kamera akan memancarkan cahaya dan mengukur waktu tempuh dari pantulan cahaya tersebut ketika tertangkap kembali oleh kamera.
 
-\subimport{7-depth-camera}{1-kinect-v2.tex}
-\subimport{7-depth-camera}{2-libfreenect2.tex}
+Selain cara tersebut,
+  citra kedalaman juga dapat diperoleh dengan cara melakukan perhitungan triangulasi pada dua atau lebih citra yang dihasilkan oleh sistem multi-kamera.
+Jarak suatu titik pada kamera dengan sistem ini dapat dihitung dengan melakukan korespondensi pada citra-citra yang dihasilkan.
+Berbeda dengan metode sebelumnya,
+  \emph{depth camera} dengan metode ini memiliki keunggulan dimana estimasi yang didapatkan bersifat kurang lebih pasif,
+  dimana estimasi tersebut tidak banyak dipengaruhi oleh kondisi pencahayaan yang ada pada lingkungan.
+
+% \subimport{7-depth-camera}{1-kinect-v2.tex}
+% \subimport{7-depth-camera}{2-libfreenect2.tex}
