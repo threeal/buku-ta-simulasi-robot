@@ -1,4 +1,11 @@
 \section{\emph{Inertial Measurement Unit} (IMU)}
 \label{sec:imu}
 
-\textcolor{red}{\lipsum[1-2]}
+\emph{Inertial measurement unit} (IMU) merupakan sebuah perangkat elektronik yang digunakan untuk mengukur besaran gaya, kecepatan putar, dan terkadang orientasi dari suatu objek.
+IMU pada umumnya terdiri atas sebuah sensor akselerometer,
+  sebuah sensor giroskop, dan terkadang juga sebuah sensor magnetometer.
+
+Pada robot, IMU pada umumnya digunakan untuk melakukan perhitungan estimasi orientasi.
+Perhitungan tersebut bisa dilakukan menggunakan beberapa metode,
+  salah satunya adalah dengan menggunakan \emph{kalman filter} yang sudah dimodifikasi untuk mendapatkan orientasi robot dalam bentuk \emph{quaternion} \citep{cit:kim2004}.
+Selain itu, IMU juga bisa digunakan sebagai \emph{feedback sensor} dalam kontrol keseimbangan pada suatu robot.
