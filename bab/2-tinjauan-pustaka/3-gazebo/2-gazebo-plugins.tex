@@ -5,7 +5,7 @@
 \emph{Plugin} tersebut dapat dibuat menggunakan bahasa pemrograman C++ yang nantinya akan dikompilasi menjadi sebuah \emph{shared library} yang dapat diintegrasikan secara langsung pada simulator Gazebo.
 
 \lstinputlisting[
-  language=XML,
+  language=C++,
   style=code,
   caption={Contoh model \emph{plugin}.},
   label={lst:contohmodelplugin}
@@ -15,5 +15,7 @@
   yakni \emph{world plugin}, \emph{model plugin}, \emph{sensor plugin}, \emph{system plugin}, \emph{visual plugin}, dan \emph{GUI plugin}.
 Sebagai contoh seperti pada potongan kode \ref{lst:contohmodelplugin},
   sebuah \emph{plugin} dibuat dari sebuah \emph{class} yang diturunkan dari \emph{class} \lstinline{ModelPlugin}.
+\emph{Class} tersebut memiliki sebuah fungsi \emph{constructor} yang dilakukan untuk menginisialisasi variabel yang dimiliki objek \emph{class} tersebut,
+  dan sebuah fungsi \lstinline{Load()} yang digunakan untuk mendapatkan informasi dari \emph{element} yang ada pada SDFormat suatu model.
 Agar bisa digunakan sebagai \emph{plugin} pada simulator Gazebo,
   \emph{class} yang dibuat nantinya perlu diregistrasi menggunakan \emph{macro} \lstinline{GZ_REGISTER_WORLD_PLUGIN}.
