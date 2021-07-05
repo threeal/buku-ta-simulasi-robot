@@ -1,4 +1,15 @@
 \subsection{RTAB-Map}
 \label{subsec:rtabmap}
 
-\textcolor{red}{\lipsum[1-2]}
+RTAB-Map merupakan sebuah \emph{library} untuk \emph{lidar} dan visual SLAM yang bersifat \emph{open source} \citep{cit:labbe2019}.
+\emph{Library} ini menggunakan pendekatan berbasis \emph{graph} untuk memecahkan permasalahan SLAM menggunakan metode \emph{loop closure detector} berbasis \emph{incremental appearance}.
+\emph{Loop closure detector} yang digunakan menggunakan pendekatan \emph{bag-of-words} untuk menentukan kemungkinan sebuah citra berasal dari lokasi sebelumnya atau lokasi yang baru.
+
+Ketika hipotesa \emph{loop closure} diterima,
+  sebuah \emph{constraint} baru akan ditambahkan pada \emph{graph} dari peta,
+  kemudian sebuah \emph{graph optimizer} akan meminimalisir \emph{error} pada peta tersebut.
+Pendekatan \emph{memory management} digunakan untuk membatasi jumlah lokasi yang digunakan untuk deteksi \emph{loop closure} dan \emph{graph optimization}.
+RTAB-Map dapat digunakan pada perangkat Kinect,
+  kamera stereo,
+  \emph{3D lidar} untuk pemetaan dengan enam \emph{degree of freedom} (DoF),
+  atau \emph{laser rangefinder} untuk pemetaan dengan tiga DoF.
