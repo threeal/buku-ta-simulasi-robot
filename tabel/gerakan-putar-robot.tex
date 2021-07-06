@@ -1,22 +1,22 @@
-\begin{longtable}{|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil estimasi orientasi dari gerakan putar pada \emph{real robot} selama 3 detik.}
   \label{tb:gerakanputarrobot}
   \\ \hline \rowcolor[HTML]{E0E0E0}
   Speed &
   Expected &
   Measured &
-  \multicolumn{2}{|c|}{Odometry}
+  \multicolumn{3}{|c|}{Odometry}
   \\ \hline \rowcolor[HTML]{E0E0E0}
   Z (rad/s) &
   Z (deg) &
   Z (deg) &
-  Z (deg) & Error
+  Z (deg) & E (deg) & E (\%)
   \csvreader[head to column names]{data/gerakan_putar_robot.csv}{}{
     \\ \hline
     \speed &
     \expected &
     \measured &
-    \odometry & \odometryerror
+    \odometry & \odometryerror & \odometryerrorpercent
   }
   \\ \hline
 \end{longtable}
