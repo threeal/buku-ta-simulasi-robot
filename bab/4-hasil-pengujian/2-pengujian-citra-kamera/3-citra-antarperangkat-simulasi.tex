@@ -17,8 +17,13 @@ Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang
   \emph{delay} merupakan selang waktu yang dibutuhkan untuk sampai ke perangkat penerima,
   dan \emph{rate} merupakan frekuensi pengiriman citra.
 
-Seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatsimulasi},
-  dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa semakin besar ukuran data yang dikirimkan,
-  maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun.
-Pada pengujian ini, dapat diketahui bahwa frekuensi yang dihasilkan cenderung stabil ketika ukuran data yang dikirim ada di bawah 3000 KB,
-  namun mengalami perubahan yang sangat signifikan ketika ukuran data yang dikirim ada di atas nilai tersebut.
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa data yang dikirimkan memiliki \emph{delay} sebesar 2-100 ms serta frekuensi sebesar 9.4-29.9 hz.
+Lebih lanjut, ketika hasil yang didapatkan ditampilkan sebagai grafik seperti yang terlihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatsimulasi},
+  hasil yang didapatkan menunjukkan bahwa semakin besar ukuran data yang dikirimkan,
+  maka \emph{delay} yang dihasilkan akan cenderung naik dan frekuensi yang dihasilkan akan cenderung turun.
+Berbeda dengan yang dihasilkan di pengujian pada sesama perangkat,
+  hingga batas resolusi 1280 x 720,
+  pengiriman citra yang dilakukan bisa menghasilkan \emph{delay} di bawah 20 ms dan frekuensi di atas 90\%.
+Namun, diatas resolusi tersebut,
+  \emph{delay} yang dihasilkan naik drastis hingga 100 ms,
+  sedangkan frekuensi yang dihasilkan turun drastis hingga 9.4 hz.
