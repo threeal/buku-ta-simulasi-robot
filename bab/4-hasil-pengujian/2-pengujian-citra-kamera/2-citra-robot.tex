@@ -1,6 +1,13 @@
 \subsection{Pengujian Pengiriman Citra Kamera pada \emph{Real Robot}}
 \label{subsec:citrarobot}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-camera.png}
+  \caption{Relasi antar-\emph{node} dari pengujian pengiriman citra kamera pada \emph{real robot}.}
+  \label{fig:rosgraphcamera}
+\end{figure}
+
 Sama seperti pengujian sebelumnya yang ada di bagian \ref{subsec:citrasimulasi},
   pengujian ini juga dilakukan dengan menjalankan \emph{image viewer node} dan \emph{command-line} \lstinline{$ ros2 topic}.
 Hanya saja, sebagai ganti dari \emph{node} \lstinline{/camera_plugin} yang ada di simulasi,
@@ -9,12 +16,7 @@ Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphcamera},
   \emph{node} \lstinline{/v4l2_camera} akan mengirimkan \emph{topic} \lstinline{/image_raw} yang berisi citra kamera,
   setelah itu \emph{node} \lstinline{/image_viewer} akan menerima citra tersebut dan menampilkannya dalam bentuk GUI.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-camera.png}
-  \caption{Relasi antar-\emph{node} dari pengujian pengiriman citra kamera pada \emph{real robot}.}
-  \label{fig:rosgraphcamera}
-\end{figure}
+\input{tabel/pengiriman-citra-robot.tex}
 
 Pengujian ini dilakukan dengan berbagai macam konfigurasi resolusi citra yang dikirim.
 Hasil pengujian ini bisa dilihat pada tabel \ref{tb:pengirimancitrasimulasi}.
@@ -23,14 +25,15 @@ Sama seperti pengujian yang ada di simulasi, pada tabel tersebut \emph{width} da
   \emph{delay} merupakan selang waktu yang dibutuhkan sebelum citra sampai ke penerima,
   dan \emph{rate} merupakan frekuensi pengiriman citra.
 
-\input{tabel/pengiriman-citra-robot.tex}
-
-Dari data yang dihasilkan oleh pengujian ini,
-  ketika dibentuk menjadi grafik seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitrasimulasi},
-  diketahui bahwa semakin besar ukuran data yang dikirimkan maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun,
-  sama seperti yang dihasilkan oleh pengujian di simulasi.
-Pada pengujian ini, dapat diketahui juga agar \emph{delay} dan frekuensi yang dihasilkan stabil,
-  data yang dikirimkan hendaknya ada di bawah 1000 KB (dalam hal ini adalah citra dengan resolusi 640x480),
-  karena pada titik tersebut frekuensi yang dikirimkan tidak jauh berbeda dari spesifikasi FPS dari kamera yang digunakan \emph{real robot} (Logitech C922).
-
 \input{grafik/pengiriman-citra-robot.tex}
+
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa data yang dikirimkan memiliki \emph{delay} sebesar 0-14 ms serta frekuensi sebesar 5.0-30.0 hz.
+Lebih lanjut, ketika hasil yang didapatkan ditampilkan sebagai grafik seperti yang terlihat pada gambar \ref{fig:grafikpengirimancitrarobot},
+  seperti kesimpulan pada pengujian sebelumnya,
+  hasil yang didapatkan menunjukkan bahwa semakin besar ukuran data yang dikirimkan,
+  maka \emph{delay} yang dihasilkan akan cenderung naik dan frekuensi yang dihasilkan akan cenderung turun.
+Walaupun cenderung naik, pada pengiriman dengan data ukuran terbesar,
+  nilai \emph{delay} yang dihasilkan tersebut terhitung rendah, hanya sebesar 14 ms.
+Sedangkan untuk frekuensi,
+  hingga batas resolusi 640 x 480,
+  pengiriman citra yang dilakukan bisa menghasilkan frekuensi diatas 90\% dari nilai FPS yang dimiliki kamera pada \emph{real robot}.

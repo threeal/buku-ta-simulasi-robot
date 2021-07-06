@@ -3,19 +3,19 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.4\textwidth,
+        height=0.38\textwidth,
         width=0.9\textwidth,
         ylabel=Delay (ms),
         ymajorgrids,
         ymin=0,
-        ymax=40,
+        ymax=125,
       ]
       \addplot table[x=size,y=delay,col sep=comma]{data/pengiriman_citra_simulasi.csv};
     \end{axis}
   \end{tikzpicture}
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.4\textwidth,
+        height=0.38\textwidth,
         width=0.9\textwidth,
         xlabel=Data Size (KB),
         ylabel=Rate (hz),
