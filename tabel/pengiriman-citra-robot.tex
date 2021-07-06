@@ -1,11 +1,15 @@
-\begin{longtable}{|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil \emph{delay} dan frekuensi dari pengiriman citra kamera pada \emph{real robot}.}
   \label{tb:pengirimancitrarobot}
   \\ \hline \rowcolor[HTML]{E0E0E0}
-  Width & Height & Size (KB) & Delay (ms) & Rate (hz)
+  \multicolumn{3}{|c|}{Resolution} &
+  \multicolumn{1}{|c|}{Delay} &
+  \multicolumn{2}{|c|}{Rate}
+  \\ \hline \rowcolor[HTML]{E0E0E0}
+  Width & Height & Size (KB) & ms & hz & percent
   \csvreader[head to column names]{data/pengiriman_citra_robot.csv}{}{
     \\ \hline
-    \width & \height & \size & \delay & \rate
+    \width & \height & \size & \delay & \rate & \ratepercent
   }
   \\ \hline
 \end{longtable}
