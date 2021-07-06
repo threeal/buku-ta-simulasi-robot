@@ -3,7 +3,7 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.45\textwidth,
+        height=0.38\textwidth,
         width=0.9\textwidth,
         ylabel=X (meter),
         xticklabels={,,},
@@ -11,7 +11,7 @@
         bar width=3pt,
         ybar=0pt,
         xmin=0,
-        xmax=14,
+        xmax=13,
       ]
       \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_simulasi.csv};
       \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_simulasi.csv};
@@ -20,7 +20,7 @@
   \end{tikzpicture}
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.45\textwidth,
+        height=0.38\textwidth,
         width=0.9\textwidth,
         ylabel=Y (meter),
         xticklabels={,,},
@@ -33,7 +33,7 @@
         bar width=3pt,
         ybar=0pt,
         xmin=0,
-        xmax=14,
+        xmax=13,
       ]
       \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_simulasi.csv};
       \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_simulasi.csv};

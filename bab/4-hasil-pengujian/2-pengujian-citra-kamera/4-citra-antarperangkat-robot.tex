@@ -4,6 +4,8 @@
 Pengujian pengiriman citra kamera antar-perangkat pada \emph{real robot} memiliki kesamaan proses dengan yang dilakukan di pengujian sebelumnya yang ada di bagian \ref{subsec:citraantarperangkatsimulasi},
   dimana di pengujian ini, \emph{image viewer node} dan \emph{command-line} \lstinline{$ ros2 topic} dijalankan di perangkat berbeda yang terhubung menggunakan jaringan \emph{ethernet} dengan perangkat yang menjalankan \emph{V4L2 camera node}.
 
+\input{tabel/pengiriman-citra-antarperangkat-robot.tex}
+
 Sama seperti pengujian-pengujian sebelumnya,
   pengujian ini juga dilakukan dengan berbagai macam konfigurasi resolusi citra yang dikirim.
 Hasil pengujian ini bisa dilihat pada tabel \ref{tb:pengirimancitraantarperangkatrobot}.
@@ -12,17 +14,17 @@ Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang
   \emph{delay} merupakan selang waktu yang dibutuhkan untuk sampai ke perangkat penerima,
   dan \emph{rate} merupakan frekuensi pengiriman citra.
 
-\input{tabel/pengiriman-citra-antarperangkat-robot.tex}
-
 \input{grafik/pengiriman-citra-antarperangkat-robot.tex}
 
-Seperti yang terlihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatrobot},
-  dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa semakin besar ukuran data yang dikirimkan,
-  maka \emph{delay} akan cenderung naik dan frekuensi akan cenderung turun.
-Pada pengujian ini, dapat diketahui bahwa \emph{delay} yang dihasilkan bisa bernilai besar hingga 100 ms,
-  dan akan naik seiring bertambahnya ukuran data yang dikirim.
-Sedangkan untuk frekuensi,
-  nilai yang dapat ditoleransi adalah ketika data yang dikirim berada di bawah 1000 KB,
-  diatas itu, frekuensi yang dikirimkan dapat turun drastis hingga 5 hz.
-Walaupun begitu, terlepas dari perbedaan \emph{delay} dan frekuensi yang dihasilkan antara pengujian di simulasi dan pada \emph{real robot},
-  dapat diketahui bahwa pengiriman data dari kedua sistem tersebut dapat diterima secara abstrak oleh program yang sama (\emph{image viewer node}) di perangkat manapun selama terkoneksi di dalam satu jaringan yang sama.
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa data yang dikirimkan memiliki \emph{delay} sebesar 6-104 ms serta frekuensi sebesar 5-30 hz.
+Lebih lanjut, ketika hasil yang didapatkan ditampilkan sebagai grafik seperti yang terlihat pada gambar \ref{fig:grafikpengirimancitraantarperangkatrobot},
+  seperti kesimpulan pada pengujian sebelumnya,
+  hasil yang didapatkan menunjukkan bahwa semakin besar ukuran data yang dikirimkan,
+  maka \emph{delay} yang dihasilkan akan cenderung naik dan frekuensi yang dihasilkan akan cenderung turun.
+
+Berbeda dengan yang dihasilkan di pengujian-pengujian sebelumnya,
+  \emph{delay} yang dihasilkan selalu naik secara drastis,
+  dimana pada resolusi 640 x 480, \emph{delay} yang dihasilkan bernilai 31.0 ms.
+Sedangkan untuk frekuensi, hingga batas resolusi 640 x 480,
+  pengiriman citra yang dilakukan bisa menghasilkan frekuensi di atas 90\% dari nilai FPS yang dimiliki kamera pada \emph{real robot}.
+Namun, diatas resolusi tersebut, frekuensi yang dihasilkan akan turun drastis hingga 5.0 hz.

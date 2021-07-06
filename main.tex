@@ -1,7 +1,7 @@
 \title{Buku Tugas Akhir ITS}
 \author{Maulana, Alfi}
 
-\documentclass[10pt,twoside]{report}
+\documentclass[10pt,twoside]{book}
 \usepackage[a5paper,top=25mm,left=25mm,right=20mm,bottom=25mm]{geometry}
 \usepackage[singlespacing]{setspace}
 \usepackage[bahasa]{babel}
@@ -24,8 +24,12 @@
 \usepackage{multido}
 \usepackage{pdflscape}
 \usepackage{rotating}
+\usepackage{rotfloat}
 \usepackage{tabularx}
 \usepackage{wrapfig}
+\usepackage{xpatch}
+\usepackage{zref-abspage}
+\usepackage{zref-user}
 
 \patchcmd{\cleardoublepage}{\hbox{}}{
   \thispagestyle{empty}
@@ -84,6 +88,35 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+\newcounter{cntsideways}
+\makeatletter
+
+\AddToShipoutPictureBG{
+  \if@mainmatter
+    \ifnum\zref@extractdefault{rotate\number\value{page}}{page}{0}=0
+      \PLS@RemoveRotate
+    \else
+      \checkoddpage
+      \ifoddpage
+        \PLS@AddRotate{90}
+      \else
+        \PLS@AddRotate{-90}
+      \fi
+    \fi
+  \fi
+}
+
+\newcommand\rotatesidewayslabel{
+  \stepcounter{cntsideways}
+  \zlabel{tmp\thecntsideways}
+  \zlabel{rotate\zref@extractdefault{tmp\thecntsideways}{page}{0}}
+}
+
+\makeatother
+
+\xapptocmd{\sidewaysfigure}{\rotatesidewayslabel}{}{}
+\xapptocmd{\sidewaystable}{\rotatesidewayslabel}{}{}
+
 \subimport{pustaka}{tanda-hubung.tex}
 
 \newenvironment{cover}[1]{
@@ -107,6 +140,8 @@
 }
 
 \begin{document}
+
+  \frontmatter
 
   \begin{cover}{sampul/gambar/sampul-luar.png}
     \color{white}
@@ -171,7 +206,7 @@
   \addcontentsline{toc}{chapter}{\listtablename}
   \cleardoublepage
 
-  \pagenumbering{arabic}
+  \mainmatter
 
   \subimport{bab}{1-pendahuluan.tex}
   \cleardoublepage

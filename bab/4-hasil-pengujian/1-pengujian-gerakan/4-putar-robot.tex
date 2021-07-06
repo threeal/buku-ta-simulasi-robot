@@ -3,20 +3,21 @@
 
 Sama seperti pada pengujian simulasi di bagian sebelumnya,
   Pengujian gerakan putar dan estimasi orientasi pada \emph{real robot} juga dilakukan dengan menjalankan \emph{node} yang sama seperti yang ada pada pengujian gerakan linier di bagian \ref{subsec:linierrobot}.
-Perbedaannya, pengujian ini dilakukan pada beberapa kecepatan putar di sumbu Z selama 3 detik.
+Perbedaannya, pengujian ini dilakukan dengan menggunakan beberapa nilai kecepatan putar di sumbu Z selama 3 detik.
+
+\input{tabel/gerakan-putar-robot.tex}
 
 Hasil pengujian ini bisa dilihat pada tabel \ref{tb:gerakanputarrobot}.
 Pada tabel tersebut, nilai yang ada di kolom \emph{speed} adalah besar kecepatan yang diatur pada \emph{topic} \lstinline{/cmd/vel},
   nilai yang ada di kolom \emph{estimated} didapatkan dari perkalian besar kecepatan putar dengan durasi pengujian,
   nilai yang ada di kolom \emph{measured} didapatkan dari pengukuran menggunakan kompas yang dipasang pada robot,
   dan terakhir nilai yang ada di kolom \emph{odometry} didapatkan dari data orientasi yang ada pada \emph{topic} \lstinline{/odom}.
+Sama seperti pada tabel \ref{tb:gerakanputarsimulasi},
+  Subkolom E pada kolom \emph{odometry} merupakan rata-rata \emph{error} pada nilai odometri terhadap nilai yang diharapkan (\emph{estimated}) dan nilai pengukuran (\emph{measured}) serta persentasenya jika dibandingkan dengan nilai sudut yang diharapkan.
 
-\input{tabel/gerakan-putar-robot.tex}
-
-Seperti kesimpulan pada pengujian sebelumnya,
-  dari data yang dihasilkan oleh pengujian ini juga dapat diketahui bahwa gerakan putar yang diperintahkan kepada robot cenderung menghasilkan orientasi robot yang sesuai dengan orientasi perkiraan (\emph{estimated orientation}).
-Lebih lanjut, ketika hasil tersebut ditampilkan sebagai grafik,
-  seperti yang terlihat pada gambar \ref{fig:grafikgerakanputarrobot},
-  hasil yang didapatkan juga cenderung memiliki arah positif negatif yang sesuai dengan yang diharapkan (\emph{expected}).
+Dari data yang dihasilkan oleh pengujian ini dapat diketahui bahwa gerakan putar yang diperintahkan kepada robot memiliki \emph{error} jarak sebesar 8.5-15.2 derajat dengan persentase rata-rata sebesar 7.8\% dari nilai sudut yang diharapkan.
+Lebih lanjut, ketika hasil yang didapatkan ditampilkan sebagai grafik seperti yang terlihat pada gambar \ref{fig:grafikgerakanputarsimulasi},
+  seperti kesimpulan pada pengujian sebelumnya,
+  hasil yang didapatkan cenderung memiliki sudut dengan arah positif dan negatif yang sesuai dengan nilai yang diharapkan (\emph{expected}) dan nilai pengukuran (\emph{measured}).
 
 \input{grafik/gerakan-putar-robot.tex}
