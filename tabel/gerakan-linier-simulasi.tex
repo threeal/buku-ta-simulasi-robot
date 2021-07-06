@@ -2,23 +2,23 @@
   \centering
   \caption{Hasil estimasi posisi dari gerakan linier pada robot di simulasi selama 3 detik.}
   \label{tb:gerakanliniersimulasi}
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
     \hline \rowcolor[HTML]{E0E0E0}
     \multicolumn{2}{|c|}{Speed} &
-    \multicolumn{2}{|c|}{Expected Position} &
-    \multicolumn{2}{|c|}{Measured Position} &
-    \multicolumn{3}{|c|}{Odometry Position}
+    \multicolumn{3}{|c|}{Expected Pos} &
+    \multicolumn{2}{|c|}{Measured Pos} &
+    \multicolumn{4}{|c|}{Odometry Pos}
     \\ \hline \rowcolor[HTML]{E0E0E0}
     X (m/s) & Y (m/s) &
+    X (m) & Y (m) & D (m) &
     X (m) & Y (m) &
-    X (m) & Y (m) &
-    X (m) & Y (m) & Error
+    X (m) & Y (m) & E (m) & E (\%)
     \csvreader[head to column names]{data/gerakan_linier_simulasi.csv}{}{
       \\ \hline
       \speedx & \speedy &
-      \expectedx & \expectedy &
+      \expectedx & \expectedy & \expecteddistance &
       \measuredx & \measuredy &
-      \odometryx & \odometryy & \odometryerror
+      \odometryx & \odometryy & \odometryerror & \odometryerrorpercent
     }
     \\ \hline
   \end{tabular}
