@@ -1,6 +1,8 @@
 \subsection{Pengujian Pengiriman Citra Kamera Antar-perangkat pada \emph{Real Robot}}
 \label{subsec:citraantarperangkatrobot}
 
+\input{tabel/pengiriman-citra-antarperangkat-robot.tex}
+
 Pengujian pengiriman citra kamera antar-perangkat pada \emph{real robot} memiliki kesamaan proses dengan yang dilakukan di pengujian sebelumnya yang ada di bagian \ref{subsec:citraantarperangkatsimulasi},
   dimana di pengujian ini, \emph{image viewer node} dan \emph{command-line} \lstinline{$ ros2 topic} dijalankan di perangkat berbeda yang terhubung menggunakan jaringan \emph{ethernet} dengan perangkat yang menjalankan \emph{V4L2 camera node}.
 
@@ -11,8 +13,6 @@ Pada tabel tersebut \emph{width} dan \emph{height} merupakan resolusi citra yang
   \emph{size} merupakan ukuran data yang dikirim,
   \emph{delay} merupakan selang waktu yang dibutuhkan untuk sampai ke perangkat penerima,
   dan \emph{rate} merupakan frekuensi pengiriman citra.
-
-\input{tabel/pengiriman-citra-antarperangkat-robot.tex}
 
 \input{grafik/pengiriman-citra-antarperangkat-robot.tex}
 

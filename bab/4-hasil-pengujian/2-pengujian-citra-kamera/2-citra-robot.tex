@@ -11,7 +11,7 @@ Seperti yang dapat dilihat pada gambar \ref{fig:rosgraphcamera},
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth,keepaspectratio]{gambar/rosgraph-camera.png}
+  \includegraphics[width=0.95\textwidth,keepaspectratio]{gambar/rosgraph-camera.png}
   \caption{Relasi antar-\emph{node} dari pengujian pengiriman citra kamera pada \emph{real robot}.}
   \label{fig:rosgraphcamera}
 \end{figure}
@@ -23,8 +23,7 @@ Sama seperti pengujian yang ada di simulasi, pada tabel tersebut \emph{width} da
   \emph{delay} merupakan selang waktu yang dibutuhkan sebelum citra sampai ke penerima,
   dan \emph{rate} merupakan frekuensi pengiriman citra.
 
-  \input{tabel/pengiriman-citra-robot.tex}
-\input{grafik/pengiriman-citra-robot.tex}
+\input{tabel/pengiriman-citra-robot.tex}
 
 Dari data yang dihasilkan oleh pengujian ini,
   ketika dibentuk menjadi grafik seperti yang dapat dilihat pada gambar \ref{fig:grafikpengirimancitrasimulasi},
@@ -33,3 +32,5 @@ Dari data yang dihasilkan oleh pengujian ini,
 Pada pengujian ini, dapat diketahui juga agar \emph{delay} dan frekuensi yang dihasilkan stabil,
   data yang dikirimkan hendaknya ada di bawah 1000 KB (dalam hal ini adalah citra dengan resolusi 640x480),
   karena pada titik tersebut frekuensi yang dikirimkan tidak jauh berbeda dari spesifikasi FPS dari kamera yang digunakan \emph{real robot} (Logitech C922).
+
+\input{grafik/pengiriman-citra-robot.tex}
