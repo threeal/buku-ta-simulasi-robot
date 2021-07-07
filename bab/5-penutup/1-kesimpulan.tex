@@ -2,14 +2,17 @@
 \label{sec:kesimpulan}
 
 Berdasarkan hasil pengujian yang telah dilakukan,
-  dapat disimpulkan bahwa lingkungan simulasi yang dibuat pada simulator Gazebo dapat digunakan untuk melakukan pengujian pada SARs secara virtual.
+  lingkungan simulasi yang dibuat menggunakan simulator Gazebo mampu digunakan untuk melakukan pengujian SARs secara virtual.
 Hasil pembacaan data sensor pada robot, seperti kamera dan \emph{depth camera},
   dapat disimulasikan pada lingkungan yang dibuat sehingga memungkinkan pengambilan data pengujian untuk dilakukan secara virtual.
-Selain itu, dengan adanya lingkungan virtual,
-  pengujian dapat dilakukan pada berbagai macam kondisi lingkungan yang diinginkan tanpa perlu mengeluarkan biaya tambahan untuk membeli perabotan maupun merenovasi ruangan seperti yang perlu dilakukan pada pengujian \emph{real}.
+Kemudian, dengan adanya abstraksi dari sistem kontroler yang dibuat menggunakan ROS 2,
+  program \emph{behavior} yang diujikan pada model robot di simulasi menghasilkan tindakan yang sama ketika diujikan pada robot fisik.
+Seperti hasil ketika robot diperintahkan untuk bergerak,
+  dimana hasil posisi dan orientasi akhir tersebut mendekati hasil yang diharapkan dengan perbedaan \emph{error} sebesar 2.6\% di simulasi dan 12.5\% pada kondisi \emph{real}.
 
-Kemudian, Dengan adanya abstraksi dari sistem kontroler yang dibuat menggunakan ROS 2,
-  program \emph{behavior} yang diujikan pada model robot di simulasi memiliki hasil yang sama ketika diujikan pada robot fisik.
-Selama pengujian, terdapat beberapa program yang sudah tersedia di ROS 2 sehingga pengujian dapat dilakukan dengan mudah tanpa perlu menulis keseluruhan program yang diperlukan untuk melakukan pengujian.
-Lebih lanjut, dengan performa yang dimiliki oleh ROS 2,
-  pertukaran data yang terjadi antara program yang terabstraksi dapat dilakukan secara \emph{real-time} dengan \emph{delay} yang rendah.
+Dengan performa yang dimiliki oleh ROS 2,
+  pertukaran data yang terjadi antara program dapat dilakukan secara \emph{real-time} dengan \emph{delay} yang rendah.
+Hal ini sesuai dengan hasil pengiriman data citra yang hingga resolusi 640 x 480 mampu menghasilkan \emph{delay} kurang dari 50 ms dan frekuensi di atas 90\% pada sesama perangkat maupun antar-perangkat.
+Pada simulator tersebut,
+  model pengguna mampu mensimulasikan pengguna \emph{real} melalui hasil deteksi pose yang dilakukan terhadap model tersebut,
+  sedangkan lingkungan simulasi mampu mensimulasikan sebuah ruangan melalui hasil pemetaan yang dilakukan oleh robot secara virtual.
