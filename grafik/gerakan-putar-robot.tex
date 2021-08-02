@@ -3,20 +3,21 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.45\textwidth,
+        height=0.38\textwidth,
         width=0.9\textwidth,
         ylabel=Z (degree),
-        xticklabels={,,},
+        xlabel=Index,
         legend style={
-          at={(0.5,-0.2)},
+          at={(0.5,-0.5)},
           anchor=north,
           legend columns=-1,
         },
         ymajorgrids,
         bar width=5pt,
         ybar=0pt,
-        xmin=0,
-        xmax=7,
+        xmin=0.1,
+        xmax=6.9,
+        xtick distance=1,
       ]
       \addplot table[x=index,y=expected,col sep=comma]{data/gerakan_putar_robot.csv};
       \addplot table[x=index,y=measured,col sep=comma]{data/gerakan_putar_robot.csv};
