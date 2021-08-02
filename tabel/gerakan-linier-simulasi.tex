@@ -4,21 +4,24 @@
   \label{tb:gerakanliniersimulasi}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
     \hline \rowcolor[HTML]{E0E0E0}
+    &
     \multicolumn{2}{|c|}{Speed} &
     \multicolumn{3}{|c|}{Expected} &
     \multicolumn{2}{|c|}{Measured} &
-    \multicolumn{4}{|c|}{Odometry}
-    \\ \hline \rowcolor[HTML]{E0E0E0}
+    \multicolumn{3}{|c|}{Odometry}
+    \\ \hhline{~----------} \rowcolor[HTML]{E0E0E0}
+    \multirow{-2}{*}{Index} &
     X (m/s) & Y (m/s) &
     X (m) & Y (m) & D (m) &
     X (m) & Y (m) &
-    X (m) & Y (m) & E (m) & E (\%)
+    X (m) & Y (m) & E (m)
     \csvreader[head to column names]{data/gerakan_linier_simulasi.csv}{}{
       \\ \hline
+      \index &
       \speedx & \speedy &
       \expectedx & \expectedy & \expecteddistance &
       \measuredx & \measuredy &
-      \odometryx & \odometryy & \odometryerror & \odometryerrorpercent
+      \odometryx & \odometryy & \odometryerror
     }
     \\ \hline
   \end{tabular}
