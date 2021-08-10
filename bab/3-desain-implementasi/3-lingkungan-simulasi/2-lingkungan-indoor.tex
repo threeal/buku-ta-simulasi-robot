@@ -1,17 +1,17 @@
-\subsection{Lingkungan Simulasi \emph{Indoor}}
+\subsection{Ruangan Kafe (\emph{Cafe World})}
 \label{subsec:lingkunganindoor}
 
-Lingkungan simulasi \emph{indoor} dibuat dengan menyusun \emph{file} SDFormat yang berisi ruangan tertutup dengan berbagai macam objek di dalamnya.
+Ruangan kafe (\emph{cafe world}) dibuat dengan menyusun \emph{file} SDFormat yang berisi ruangan tertutup dengan berbagai macam objek di dalamnya.
 Seperti yang terlihat pada potongan kode \ref{lst:indoorworldsdf},
-  lingkungan ini terdiri atas objek pencahayaan dan \emph{include file} pada \emph{path} \lstinline{model://cafe}, \lstinline{model://cafe_table}, \lstinline{model://dienen_robot}, dan \lstinline{model://dienen_human}.
+  ruangan virtual ini terdiri atas objek pencahayaan dan \emph{include file} pada \emph{path} \lstinline{model://cafe}, \lstinline{model://cafe_table}, \lstinline{model://dienen_robot}, dan \lstinline{model://dienen_human}.
 Dua \emph{path} pertama merupakan \emph{path} dari model yang sudah disediakan oleh Gazebo,
-  yang membentuk lingkungan kafe beserta perabotan yang ada di dalamnya,
+  yang membentuk ruangan kafe beserta perabotan yang ada di dalamnya,
   sedangkan dua \emph{path} terakhir merupakan \emph{path} dari model robot dan model pengguna yang sebelumnya sudah dibuat di bagian \ref{sec:modelrobot} dan \ref{sec:modelpengguna}.
 
 \lstinputlisting[
   language=XML,
   style=code,
-  caption={Struktur SDFormat dari lingkungan simulasi \emph{indoor}.},
+  caption={Struktur SDFormat dari ruangan kafe (\emph{cafe world}).},
   label={lst:indoorworldsdf}
 ]{kode/sdf/indoor_world.xml}
 
@@ -23,6 +23,6 @@ Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.23]{gambar/lingkungan-indoor.png}
-  \caption{Tampilan lingkungan simulasi \emph{indoor} pada Gazebo.}
+  \caption{Tampilan ruangan kafe (\emph{cafe world}) pada Gazebo.}
   \label{fig:lingkunganindoor}
 \end{figure}
