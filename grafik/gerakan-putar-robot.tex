@@ -3,12 +3,12 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.38\textwidth,
+        height=0.35\textwidth,
         width=0.9\textwidth,
-        ylabel=Z (degree),
-        xlabel=Index,
+        ylabel=Sudut (degree),
+        xlabel=Percobaan Ke-,
         legend style={
-          at={(0.5,-0.5)},
+          at={(0.5,1.5)},
           anchor=north,
           legend columns=-1,
         },
@@ -17,7 +17,9 @@
         ybar=0pt,
         xmin=0.1,
         xmax=6.9,
+        ymin=0,
         xtick distance=1,
+        ytick distance=90,
       ]
       \addplot table[x=index,y=expected,col sep=comma]{data/gerakan_putar_robot.csv};
       \addplot table[x=index,y=measured,col sep=comma]{data/gerakan_putar_robot.csv};
@@ -25,6 +27,6 @@
       \legend{Expected,Measured,Odometry}
     \end{axis}
   \end{tikzpicture}
-  \caption{Grafik estimasi orientasi dari gerakan putar pada \emph{real robot}.}
+  \caption{Grafik estimasi sudut orientasi akhir dari gerakan putar pada \emph{real robot}.}
   \label{fig:grafikgerakanputarrobot}
 \end{figure}

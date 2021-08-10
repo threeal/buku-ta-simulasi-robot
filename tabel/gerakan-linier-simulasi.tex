@@ -1,27 +1,27 @@
 \begin{sidewaystable}
   \centering
-  \caption{Hasil estimasi posisi dari gerakan linier pada robot di simulasi selama 3 detik.}
+  \caption{Hasil estimasi posisi akhir dari setiap percobaan ke-K untuk gerakan linier pada robot di simulasi selama 3 detik.}
   \label{tb:gerakanliniersimulasi}
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
     \hline \rowcolor[HTML]{E0E0E0}
     &
-    \multicolumn{2}{|c|}{Speed} &
-    \multicolumn{3}{|c|}{Expected} &
-    \multicolumn{2}{|c|}{Measured} &
-    \multicolumn{3}{|c|}{Odometry}
-    \\ \hhline{~----------} \rowcolor[HTML]{E0E0E0}
-    \multirow{-2}{*}{Index} &
-    X (m/s) & Y (m/s) &
-    X (m) & Y (m) & D (m) &
-    X (m) & Y (m) &
-    X (m) & Y (m) & E (m)
+    \multicolumn{2}{|c|}{Speed (m/s)} &
+    \multicolumn{3}{|c|}{Expected (m)} &
+    \multicolumn{3}{|c|}{Measured (m)} &
+    \multicolumn{4}{|c|}{Odometry (m)}
+    \\ \hhline{~------------} \rowcolor[HTML]{E0E0E0}
+    \multirow{-2}{*}{K} &
+    X & Y &
+    X & Y & Dist &
+    X & Y & Dist &
+    X & Y & Dist & Err
     \csvreader[head to column names]{data/gerakan_linier_simulasi.csv}{}{
       \\ \hline
       \index &
       \speedx & \speedy &
       \expectedx & \expectedy & \expecteddistance &
-      \measuredx & \measuredy &
-      \odometryx & \odometryy & \odometryerror
+      \measuredx & \measuredy & \measureddistance &
+      \odometryx & \odometryy & \odometrydistance & \odometryerror
     }
     \\ \hline
   \end{tabular}

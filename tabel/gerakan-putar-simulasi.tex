@@ -1,5 +1,5 @@
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil estimasi orientasi dari gerakan putar pada robot di simulasi selama 3 detik.}
+  \caption{Hasil estimasi orientasi akhir dari setiap percobaan ke-K untuk gerakan putar pada robot di simulasi selama 3 detik.}
   \label{tb:gerakanputarsimulasi}
   \\ \hline \rowcolor[HTML]{E0E0E0}
   &
@@ -8,11 +8,11 @@
   Measured &
   \multicolumn{2}{|c|}{Odometry}
   \\ \hhline{~-----} \rowcolor[HTML]{E0E0E0}
-  \multirow{-2}{*}{Index} &
+  \multirow{-2}{*}{K} &
   Z (rad/s) &
   Z (deg) &
   Z (deg) &
-  Z (deg) & E (deg)
+  Z (deg) & Err (deg)
   \csvreader[head to column names]{data/gerakan_putar_simulasi.csv}{}{
     \\ \hline
     \index &

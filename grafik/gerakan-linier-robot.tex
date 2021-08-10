@@ -5,44 +5,28 @@
     \begin{axis}[
         height=0.35\textwidth,
         width=0.9\textwidth,
-        ylabel=X (meter),
-        xticklabels={,,},
-        ymajorgrids,
-        bar width=3pt,
-        ybar=0pt,
-        xmin=0.1,
-        xmax=12.9,
-        xtick distance=1,
-      ]
-      \addplot table[x=index,y=expectedx,col sep=comma]{data/gerakan_linier_robot.csv};
-      \addplot table[x=index,y=measuredx,col sep=comma]{data/gerakan_linier_robot.csv};
-      \addplot table[x=index,y=odometryx,col sep=comma]{data/gerakan_linier_robot.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \begin{tikzpicture}
-    \begin{axis}[
-        height=0.35\textwidth,
-        width=0.9\textwidth,
-        ylabel=Y (meter),
-        xlabel=Index,
+        ylabel=Jarak (meter),
+        xlabel=Percobaan Ke-,
         legend style={
-          at={(0.5,-0.5)},
+          at={(0.5,1.5)},
           anchor=north,
           legend columns=-1,
         },
         ymajorgrids,
-        bar width=3pt,
+        bar width=4pt,
         ybar=0pt,
         xmin=0.1,
         xmax=12.9,
+        ymin=0,
         xtick distance=1,
+        ytick distance=1,
       ]
-      \addplot table[x=index,y=expectedy,col sep=comma]{data/gerakan_linier_robot.csv};
-      \addplot table[x=index,y=measuredy,col sep=comma]{data/gerakan_linier_robot.csv};
-      \addplot table[x=index,y=odometryy,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=expecteddistance,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=measureddistance,col sep=comma]{data/gerakan_linier_robot.csv};
+      \addplot table[x=index,y=odometrydistance,col sep=comma]{data/gerakan_linier_robot.csv};
       \legend{Expected,Measured,Odometry}
     \end{axis}
   \end{tikzpicture}
-  \caption{Grafik estimasi posisi dari gerakan linier pada \emph{real robot}.}
+  \caption{Grafik estimasi jarak posisi akhir dari gerakan linier pada \emph{real robot}.}
   \label{fig:grafikgerakanlinierrobot}
 \end{figure}
