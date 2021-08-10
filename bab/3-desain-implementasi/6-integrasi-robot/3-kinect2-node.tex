@@ -7,15 +7,15 @@
   sebuah data citra kedalaman (\emph{depth image}) melalui \emph{topic} \lstinline{/kinect2/depth/image_raw},
   dan dua buah data informasi kamera masing-masing untuk citra berwarna dan kedalaman.
 
-Seperti yang terlihat pada potongan kode \ref{lst:kinect2node},
-  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 dan objek \lstinline{libfreenect2::Freenect2} untuk mengakses perangkat Kinect V2.
-\emph{Node} ini memiliki dua buah \emph{image publisher} dan \emph{camera info publisher} masing-masing untuk citra berwarna dan citra kedalaman.
-Bagian utama dari \emph{node} ini terletak pada fungsi \lstinline{OnNewFrame()} yang akan dipanggil ketika \emph{node} menerima data citra dari perangkat Kinect V2,
-  dan kemudian menyalurkan data citra tersebut kepada \emph{topic} yang telah dijelaskan sebelumnya.
-
 \lstinputlisting[
   language=C++,
   style=code,
   caption={\emph{Class} dari \emph{Kinect2 node}.},
   label={lst:kinect2node}
 ]{kode/node/kinect2_node.cpp}
+
+Seperti yang terlihat pada potongan kode \ref{lst:kinect2node},
+  \emph{node} ini menggunakan \emph{package} \lstinline{rclcpp} untuk mengakses sistem komunikasi ROS 2 dan objek \lstinline{libfreenect2::Freenect2} untuk mengakses perangkat Kinect V2.
+\emph{Node} ini memiliki dua buah \emph{image publisher} dan \emph{camera info publisher} masing-masing untuk citra berwarna dan citra kedalaman.
+Bagian utama dari \emph{node} ini terletak pada fungsi \lstinline{OnNewFrame()} yang akan dipanggil ketika \emph{node} menerima data citra dari perangkat Kinect V2,
+  dan kemudian menyalurkan data citra tersebut kepada \emph{topic} yang telah dijelaskan sebelumnya.

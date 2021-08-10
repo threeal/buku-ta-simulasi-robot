@@ -1,22 +1,12 @@
 <?xml version="1.0" ?>
 <sdf version="1.7">
   <model name="dienen_human">
-
-    <link name="torso_link">
-      ...
-    </link>
-
     <link name="left_upper_leg_link">
       ...
     </link>
-
-    ...
-
     <joint name="left_upper_leg_joint" type="revolute">
       ...
     </joint>
-
     ...
-
   </model>
 </sdf>

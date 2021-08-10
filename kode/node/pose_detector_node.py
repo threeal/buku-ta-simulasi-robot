@@ -1,6 +1,5 @@
 import mediapipe as mp
 from rclpy.node import Node
-
 ...
 
 
@@ -15,7 +14,4 @@ class PoseDetector(Node):
         ...
 
     def image_callback(self, msg):
-        image = ...
-        results = self.pose.process(image)
-
         ...

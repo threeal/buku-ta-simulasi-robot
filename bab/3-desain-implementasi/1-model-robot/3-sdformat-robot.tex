@@ -42,6 +42,13 @@ Seperti yang terlihat pada potongan kode \ref{lst:leftshoulderjoint} dan \ref{ls
   label={lst:upperbodyjoint}
 ]{kode/sdf/robot_model/upper_body_joint.xml}
 
+\lstinputlisting[
+  language=XML,
+  style=code,
+  caption={\emph{Sensor element} dari sensor kamera.},
+  label={lst:camerasensor}
+]{kode/sdf/robot_model/camera_sensor.xml}
+
 Terakhir, penyusunan SDFormat dilakukan melalui penambahan sensor kamera dan \emph{depth camera} yang digunakan pada robot.
 Sensor tersebut ditambahkan dengan menyematkan \emph{sensor element} pada \emph{link element} dari masing-masing bagian kamera dan \emph{depth camera}.
 Seperti yang terlihat pada potongan kode \ref{lst:camerasensor} dan \ref{lst:depthcamerasensor},
@@ -50,13 +57,6 @@ Seperti yang terlihat pada potongan kode \ref{lst:camerasensor} dan \ref{lst:dep
   Pada kamera, \emph{sensor element} yang digunakan memiliki \emph{type attribute} bernilai \emph{camera},
   sedangkan pada \emph{depth camera}, \emph{sensor element} yang digunakan memiliki \emph{type attribute} bernilai \emph{depth}.
   Sisanya, nilai setiap \emph{element} yang ada di kedua sensor tersebut didapatkan dari spesifikasi kamera dan \emph{depth camera} yang digunakan di prototipe robot seperti yang dijelaskan di bagian \ref{subsec:prototiperobotdienen}.
-
-\lstinputlisting[
-  language=XML,
-  style=code,
-  caption={\emph{Sensor element} dari sensor kamera.},
-  label={lst:camerasensor}
-]{kode/sdf/robot_model/camera_sensor.xml}
 
 \lstinputlisting[
   language=XML,
