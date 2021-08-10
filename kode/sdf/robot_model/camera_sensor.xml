@@ -1,4 +1,7 @@
 <link name="camera_link">
+  <intertial>
+    ...
+  </intertial>
   ...
   <sensor name="camera" type="camera">
     <pose>0.01 0 0 0 0 0</pose>

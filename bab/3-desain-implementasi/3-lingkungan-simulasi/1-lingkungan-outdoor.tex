@@ -1,21 +1,20 @@
-\subsection{Lingkungan Simulasi \emph{Outdoor}}
+\subsection{Ruang Kosong (\emph{Empty World})}
 \label{subsec:lingkunganoutdoor}
 
-Lingkungan simulasi \emph{outdoor} dibuat dengan menyusun \emph{file} SDFormat yang berisi lingkungan paling dasar yang dibutuhkan oleh robot.
-Lingkungan simulasi ini dibuat untuk memudahkan pengujian gerakan pada robot sehingga robot dapat bergerak secara bebas tanpa terhalang oleh \emph{obstacle} lain.
+Ruang kosong (\emph{empty world}) dibuat dengan menyusun \emph{file} SDFormat yang berisi objek paling dasar yang dibutuhkan oleh robot.
+Ruangan virtual ini dibuat untuk memudahkan pengujian gerakan pada robot sehingga robot dapat bergerak secara bebas tanpa terhalang oleh \emph{obstacle} lain.
+
+Seperti yang terlihat pada potongan kode \ref{lst:outdoorworldsdf},
+  ruangan virtual ini terdiri atas sebuah objek pencahayaan yang berupa \emph{light element},
+  dan dua buah \emph{include element} dengan \emph{path} \lstinline{model://ground_plane} dan \emph{path} \lstinline{model://dienen_robot}.
+Kedua \emph{include element} tersebut digunakan untuk memasukkan model \emph{ground plane} yang sudah disediakan oleh Gazebo dan model robot yang telah dibuat sebelumnya di bagian \ref{sec:modelrobot}.
 
 \lstinputlisting[
   language=XML,
   style=code,
-  caption={Struktur SDFormat dari lingkungan simulasi \emph{outdoor}.},
+  caption={Struktur SDFormat dari ruang kosong (\emph{empty world}).},
   label={lst:outdoorworldsdf}
 ]{kode/sdf/outdoor_world.xml}
-
-Seperti yang terlihat pada potongan kode \ref{lst:outdoorworldsdf},
-  lingkungan ini terdiri atas sebuah objek pencahayaan yang berupa \emph{light element},
-  dan dua \emph{include file} pada \emph{path} \lstinline{model://ground_plane} dan pada \emph{path} \lstinline{model://dienen_robot}.
-Kedua \emph{include file} tersebut digunakan untuk memasukkan model \emph{ground plane} yang sudah disediakan oleh Gazebo dan model robot yang telah dibuat sebelumnya di bagian \ref{sec:modelrobot}.
-Di lingkungan ini, model \emph{ground plane} diperlukan untuk memberikan \emph{collision} pada dasar lingkungan sehingga model robot tidak jatuh terus menerus ke bawah karena pengaruh gravitasi di simulasi.
 
 Setelah \emph{file} SDFormat dibuat,
   hasil yang didapatkan setelah dijalankan pada simulator tampak seperti pada gambar \ref{fig:lingkunganoutdoor}.
@@ -26,6 +25,6 @@ Sesuai dengan susunan yang diisi pada \emph{file} SDFormat,
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.23]{gambar/lingkungan-outdoor.png}
-  \caption{Tampilan lingkungan simulasi \emph{outdoor} pada Gazebo.}
+  \caption{Tampilan ruang kosong (\emph{empty world}) pada Gazebo.}
   \label{fig:lingkunganoutdoor}
 \end{figure}

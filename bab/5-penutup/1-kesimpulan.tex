@@ -5,14 +5,12 @@ Berdasarkan hasil pengujian yang telah dilakukan,
   lingkungan simulasi yang dibuat menggunakan simulator Gazebo mampu digunakan untuk melakukan pengujian SARs secara virtual.
 Hasil pembacaan data sensor pada robot, seperti kamera dan \emph{depth camera},
   dapat disimulasikan pada lingkungan yang dibuat sehingga memungkinkan pengambilan data pengujian untuk dilakukan secara virtual.
-Kemudian, dengan adanya abstraksi dari sistem kontroler yang dibuat menggunakan ROS 2,
+Selain itu, model pengguna dan ruangan virtual yang ada di simulasi mampu digunakan dalam pengujian deteksi pose dan pemetaan ruangan menggunakan metode SLAM.
+
+Dengan adanya abstraksi dari sistem kontroler yang dibuat menggunakan ROS 2,
   program \emph{behavior} yang diujikan pada model robot di simulasi menghasilkan tindakan yang sama ketika diujikan pada robot fisik.
 Seperti hasil ketika robot diperintahkan untuk bergerak,
   dimana hasil posisi dan orientasi akhir tersebut mendekati hasil yang diharapkan dengan perbedaan \emph{error} sebesar 2.6\% di simulasi dan 12.5\% pada kondisi \emph{real}.
-
-Dengan performa yang dimiliki oleh ROS 2,
+Lebih lanjut, Dengan performa yang dimiliki oleh ROS 2,
   pertukaran data yang terjadi antara program dapat dilakukan secara \emph{real-time} dengan \emph{delay} yang rendah.
-Hal ini sesuai dengan hasil pengiriman data citra yang hingga resolusi 640 x 480 mampu menghasilkan \emph{delay} kurang dari 50 ms dan frekuensi di atas 90\% pada sesama perangkat maupun antar-perangkat.
-Pada simulator tersebut,
-  model pengguna mampu mensimulasikan pengguna \emph{real} melalui hasil deteksi pose yang dilakukan terhadap model tersebut,
-  sedangkan lingkungan simulasi mampu mensimulasikan sebuah ruangan melalui hasil pemetaan yang dilakukan oleh robot secara virtual.
+Hal ini sesuai dengan hasil pengiriman data citra yang hingga resolusi 640 x 480 mampu menghasilkan \emph{delay} kurang dari 50 ms dan frekuensi di atas 90\% pada sesama perangkat maupun antar-perangkat baik di simulasi maupun di dunia nyata.

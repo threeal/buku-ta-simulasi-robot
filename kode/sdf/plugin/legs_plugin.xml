@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.7">
   <model name="dienen_human">
-
     <plugin name="dienen_human_legs" filename="libbeine_legs_plugin.so">
       <joint_force_strength>1000.0</joint_force_strength>
       <joint_force_smoothness>0.2</joint_force_smoothness>
@@ -9,8 +8,6 @@
       <left_knee_pitch_joint>left_lower_leg_joint</left_knee_pitch_joint>
       ...
     </plugin>
-
     ...
-
   </model>
 </sdf>

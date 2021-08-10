@@ -1,10 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.7">
   <model name="dienen_robot">
-
     <plugin name="navigation_plugin" filename="libdienen_navigation_plugin.so" />
-
     ...
-
   </model>
 </sdf>

@@ -7,9 +7,6 @@ namespace dienen_gazebo_plugins
 
 class NavigationPlugin : public gazebo::ModelPlugin
 {
-public:
-  ...
-
 private:
   rclcpp::Node::SharedPtr node;
 

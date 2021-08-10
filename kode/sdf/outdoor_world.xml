@@ -1,21 +1,17 @@
 <?xml version="1.0"?>
 <sdf version="1.7">
   <world name="outdoor">
-
     <light name="sun" type="directional">
       <pose>0 0 10 0 -0 0</pose>
       <direction>0 0.5 -0.9</direction>
       ...
     </light>
-
     <include>
       <uri>model://ground_plane</uri>
     </include>
-
     <include>
       <pose>0.0 0 1.0 0 0 0</pose>
       <uri>model://dienen_robot</uri>
     </include>
-
   </world>
 </sdf>

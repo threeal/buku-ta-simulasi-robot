@@ -4,21 +4,22 @@
 Pada bab ini akan dipaparkan hasil pengujian serta analisis dari desain dan implementasi sistem yang telah dibuat sebelumnya di bab \ref{chap:desainimplementasi}.
 Setiap pengujian yang dilakukan pada penelitian ini diujikan menggunakan model robot yang ada di simulasi dan menggunakan prototipe robot yang diuji secara \emph{real}.
 
-Pengujian yang dilakukan menggunakan model robot yang ada di simulasi dilakukan di lingkungan \emph{outdoor} dan di lingkungan \emph{indoor} seperti yang telah dibuat di bagian \ref{sec:lingkungansimulasi}.
-Pengujian tersebut dilakukan di simulator Gazebo dengan menggunakan komputer dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputersimulator}.
-Sedangkan pengujian yang dilakukan menggunakan prototipe robot secara \emph{real} dilakukan di lingkungan laboratorium AJ403 Teknik Komputer ITS serta menggunakan komputer robot dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputerrobot}.
+Pengujian yang dilakukan menggunakan model robot yang ada di simulasi dilakukan pada ruangan virtual di simulator Gazebo yang dijalankan menggunakan komputer dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputersimulator}.
+Sedangkan pengujian yang dilakukan menggunakan prototipe robot secara \emph{real} dilakukan di ruang laboratorium AJ403 Teknik Komputer ITS serta menggunakan komputer robot dengan spesifikasi seperti yang dapat dilihat pada tabel \ref{tb:spesifikasikomputerrobot}.
 
 \begin{longtable}{|c|c|}
   \caption{Spesifikasi komputer untuk menjalankan simulator.}
   \label{tb:spesifikasikomputersimulator}\\
   \hline
-  OS  & Ubuntu 20.04.2 LTS \\
+  OS      & Ubuntu 20.04.2 LTS \\
   \hline
-  CPU & Intel i3-8100 (4) @ 3.600GH \\
+  Kernel  & 5.4.0-80-generic \\
   \hline
-  GPU & NVIDIA GeForce GTX 1050 Ti \\
+  CPU     & Intel i3-8100 (4) @ 3.600GH \\
   \hline
-  RAM & 7901 MiB \\
+  GPU     & NVIDIA GeForce GTX 1050 Ti \\
+  \hline
+  RAM     & 7901 MiB \\
   \hline
 \end{longtable}
 
@@ -26,13 +27,15 @@ Sedangkan pengujian yang dilakukan menggunakan prototipe robot secara \emph{real
   \caption{Spesifikasi komputer yang ada pada prototipe robot.}
   \label{tb:spesifikasikomputerrobot}\\
   \hline
-  OS  & Ubuntu 20.04.2 LTS \\
+  OS      & Ubuntu 20.04.2 LTS \\
   \hline
-  CPU & Intel i3-10110U (4) @ 4.100 \\
+  Kernel  & 5.4.0-80-generic \\
   \hline
-  GPU & Intel UHD Graphics \\
+  CPU     & Intel i3-10110U (4) @ 4.100 \\
   \hline
-  RAM & 3648 MiB \\
+  GPU     & Intel UHD Graphics \\
+  \hline
+  RAM     & 3648 MiB \\
   \hline
 \end{longtable}
 
