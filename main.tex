@@ -25,6 +25,7 @@
 \usepackage{multido}
 \usepackage{multirow}
 \usepackage{pdflscape}
+\usepackage{pdfpages}
 \usepackage{rotating}
 \usepackage{rotfloat}
 \usepackage{tabularx}
@@ -168,7 +169,10 @@
   \subimport{lainnya}{pernyataan-keaslian.tex}
   \cleardoublepage
 
-  \subimport{lainnya}{lembar-pengesahan.tex}
+  % \subimport{lainnya}{lembar-pengesahan.tex}
+  \thispagestyle{empty}
+  \includepdf{lainnya/lembar-pengesahan.pdf}
+  \newpage
   \cleardoublepage
 
   \pagenumbering{roman}
